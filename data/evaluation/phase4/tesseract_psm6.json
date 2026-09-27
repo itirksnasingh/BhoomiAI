@@ -1,0 +1,290 @@
+{
+  "engine": "Tesseract",
+  "psm": 6,
+  "overall": {
+    "evaluable_fields": 26,
+    "exact_field_recall": 0.1538,
+    "fuzzy_field_recall": 0.0,
+    "mean_field_similarity": 0.0204
+  },
+  "field_summary": {
+    "document_type": {
+      "evaluable": 12,
+      "exact_recall": 0.0833,
+      "fuzzy_recall": 0.0,
+      "mean_similarity": 0.0328
+    },
+    "village": {
+      "evaluable": 1,
+      "exact_recall": 0.0,
+      "fuzzy_recall": 0.0,
+      "mean_similarity": 0.0057
+    },
+    "taluka": {
+      "evaluable": 1,
+      "exact_recall": 0.0,
+      "fuzzy_recall": 0.0,
+      "mean_similarity": 0.0057
+    },
+    "survey_gat_number": {
+      "evaluable": 8,
+      "exact_recall": 0.125,
+      "fuzzy_recall": 0.0,
+      "mean_similarity": 0.0054
+    },
+    "sub_division": {
+      "evaluable": 1,
+      "exact_recall": 1.0,
+      "fuzzy_recall": 0.0,
+      "mean_similarity": 0.0045
+    },
+    "account_number": {
+      "evaluable": 1,
+      "exact_recall": 1.0,
+      "fuzzy_recall": 0.0,
+      "mean_similarity": 0.009
+    },
+    "holder_name": {
+      "evaluable": 0,
+      "exact_recall": null,
+      "fuzzy_recall": null,
+      "mean_similarity": null
+    },
+    "cultivable_area": {
+      "evaluable": 0,
+      "exact_recall": null,
+      "fuzzy_recall": null,
+      "mean_similarity": null
+    },
+    "land_tenure": {
+      "evaluable": 1,
+      "exact_recall": 0.0,
+      "fuzzy_recall": 0.0,
+      "mean_similarity": 0.04
+    },
+    "local_field_name": {
+      "evaluable": 1,
+      "exact_recall": 0.0,
+      "fuzzy_recall": 0.0,
+      "mean_similarity": 0.0303
+    }
+  },
+  "documents": [
+    {
+      "image": "data/evaluation/rendered/sampleimage10_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना सात / गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0437
+        },
+        "village": {
+          "reference": "अकोट",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0057
+        },
+        "taluka": {
+          "reference": "अकोट",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0057
+        },
+        "survey_gat_number": {
+          "reference": "48",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0057
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage11_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0143
+        },
+        "survey_gat_number": {
+          "reference": "92",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0026
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage12_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना सात / गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.1081
+        },
+        "survey_gat_number": {
+          "reference": "92",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0103
+        },
+        "land_tenure": {
+          "reference": "कोरडवाहू",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.04
+        },
+        "local_field_name": {
+          "reference": "सिरगाव",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0303
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage1_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना सात / गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0117
+        },
+        "survey_gat_number": {
+          "reference": "48",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0029
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage2_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना सात / गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0243
+        },
+        "survey_gat_number": {
+          "reference": "92",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0041
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage3_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0138
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage4_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना सात / गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0655
+        },
+        "survey_gat_number": {
+          "reference": "92",
+          "exact": true,
+          "fuzzy": false,
+          "similarity": 0.0052
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage5_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0081
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage6_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना सात / गाव नमुना बारा",
+          "exact": true,
+          "fuzzy": false,
+          "similarity": 0.0424
+        },
+        "survey_gat_number": {
+          "reference": "92",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0031
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage7_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0143
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage8_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना सात / गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0383
+        },
+        "survey_gat_number": {
+          "reference": "92",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.009
+        },
+        "sub_division": {
+          "reference": "1",
+          "exact": true,
+          "fuzzy": false,
+          "similarity": 0.0045
+        },
+        "account_number": {
+          "reference": "20",
+          "exact": true,
+          "fuzzy": false,
+          "similarity": 0.009
+        }
+      }
+    },
+    {
+      "image": "data/evaluation/rendered/sampleimage9_page_01.png",
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना बारा",
+          "exact": false,
+          "fuzzy": false,
+          "similarity": 0.0087
+        }
+      }
+    }
+  ]
+}

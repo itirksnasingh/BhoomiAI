@@ -1,0 +1,22 @@
+from __future__ import annotations
+import csv,json,sys
+from pathlib import Path
+from phase4_engine import run_tesseract,cached_indic
+ROOT=Path(__file__).resolve().parents[2]; GT=ROOT/'data/evaluation/field_ground_truth_phase4.csv'; OUT=ROOT/'data/evaluation/phase4'
+def load():
+ with GT.open(encoding='utf-8-sig',newline='') as f:return list(csv.DictReader(f))
+def main():
+ print('=== BhoomiAI Phase 4 — FIXED CACHE-FIRST EVALUATION ==='); print('Repository:',ROOT); print('Ground truth:',GT); OUT.mkdir(parents=True,exist_ok=True)
+ rows=load(); print(f'Samples: {len(rows)}')
+ print('\n[1/3] Tesseract baselines (PSM 4/6/11)...'); tess=run_tesseract(rows,ROOT,OUT); print('  Tesseract complete.')
+ print('\n[2/3] IndicOCR cache-first analysis...'); indic=cached_indic(rows,ROOT,OUT); print('  Existing IndicOCR benchmark reused. NO new IndicOCR inference launched.')
+ print('\n[3/3] Building final Phase 4 report...')
+ summary={'phase':'Phase 4 — OCR, table detection, extraction accuracy and failure analysis','status':'CACHE-FIRST COMPLETE','samples':len(rows),'ground_truth':str(GT.relative_to(ROOT)),'tesseract':{k:v['overall'] for k,v in tess.items()},'indicocr':indic,'artifacts':{'tesseract':'data/evaluation/phase4/','indicocr_cached':'data/evaluation/phase4/indicocr_cached_analysis.json','legacy_indicocr':'data/evaluation/indicocr_field_benchmark.json','sample1_raw':'data/evaluation/indicocr_test_sample1.json'}}
+ (OUT/'phase4_summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf8')
+ md=['# BhoomiAI Phase 4 — Final Cache-First Evaluation','',f'**Status:** {summary["status"]}',f'**Samples:** {len(rows)}','', '## Why this run is safe and fast','- Reuses the existing 12-page IndicOCR benchmark instead of launching another expensive model run.','- Uses the existing raw IndicOCR JSON for Sample 1 to verify table detection and the corrected survey number 48.','- Runs fresh Tesseract baselines locally.','- No optional optimized-kernel installation is required.','', '## Tesseract results']
+ for k,v in summary['tesseract'].items(): md += [f'### PSM {k}',f'- Exact field recall: **{v["exact_field_recall"]}**',f'- Fuzzy field recall: **{v["fuzzy_field_recall"]}**',f'- Mean field similarity: **{v["mean_field_similarity"]}**','']
+ i=indic['cached_legacy_benchmark']; md += ['## Existing IndicOCR benchmark','',f'- Historical evaluable fields: **{i.get("evaluable_fields")}**',f'- Historical cached field retrieval recall: **{i.get("field_retrieval_recall")}**',f'- Historical inference time: **{i.get("total_inference_seconds")} seconds total**', '', '## Corrected-ground-truth caveat', '- The legacy IndicOCR benchmark was produced before the confirmed Sample 1 and Sample 11 ground-truth corrections. It is therefore retained as a cached baseline, not presented as the final corrected 12-page accuracy score.', f'- Cached pages available: **{indic["coverage_pages"]}/{len(rows)}**.', f'- Pages requiring fresh IndicOCR inference for a fully corrected 12-page score: **{len(indic["fresh_indicocr_pages_required"])}**.', '', '## Sample 1 structure-aware proof']
+ s=indic.get('sample1_table_proof') or {}; md += [f'- Detected table blocks: **{s.get("table_count",0)}**.', '- The existing raw IndicOCR artifact contains the 7/12 table and survey value ४८.', '- Table-aware parsing and Marathi digit normalization are included in the evaluation engine.', '', '## Interpretation', '- This Phase 4 batch is intentionally cache-first so it does not unexpectedly consume ~40 minutes of GPU inference.', '- A fully corrected 12-page IndicOCR score requires fresh inference for the pages listed in `indicocr_cached_analysis.json`.', '- Do not interpret the legacy 20% recall as the final model accuracy.', '']
+ (ROOT/'docs/dataset/phase-4-final-report.md').write_text('\n'.join(md),encoding='utf8')
+ print('\n=== PHASE 4 BATCH COMPLETE ==='); print('Summary:',OUT/'phase4_summary.json'); print('Report:',ROOT/'docs/dataset/phase-4-final-report.md'); print('Fresh IndicOCR pages still required for corrected full benchmark:',len(indic['fresh_indicocr_pages_required'])); print('Send me ONLY phase4_summary.json after completion.')
+if __name__=='__main__': main()

@@ -1,0 +1,61 @@
+{
+  "image": "sampleimage12_page_01.png",
+  "width": 1685,
+  "height": 2428,
+  "blocks": [
+    {
+      "order": 0,
+      "label": "Header",
+      "type": "PageHeader",
+      "bbox_xyxy": [
+        692.4,
+        53.4,
+        1394.0,
+        183.1
+      ],
+      "conf": 0.608,
+      "text": ""
+    },
+    {
+      "order": 1,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        1210.2,
+        54.4,
+        1394.5,
+        119.0
+      ],
+      "conf": 0.715,
+      "text": "$$000120$$"
+    },
+    {
+      "order": 2,
+      "label": "Title",
+      "type": "Title",
+      "bbox_xyxy": [
+        692.0,
+        143.0,
+        988.3,
+        183.6
+      ],
+      "conf": 0.741,
+      "text": "गाव नमुना बारा--चालू."
+    },
+    {
+      "order": 3,
+      "label": "Table",
+      "type": "Table",
+      "bbox_xyxy": [
+        56.6,
+        212.4,
+        1534.5,
+        2270.9
+      ],
+      "conf": 0.831,
+      "text": "<table>\n<thead>\n<tr>\n<th>१</th>\n<th>२</th>\n<th>३</th>\n<th>४</th>\n<th>५</th>\n<th>६</th>\n<th>७</th>\n<th>८</th>\n<th>९</th>\n<th>१०</th>\n<th>११</th>\n<th>१२</th>\n<th>१३</th>\n<th>१४</th>\n<th>१५</th>\n<th>१६</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>६<br/>८</td>\n<td>एक</td>\n<td>-</td>\n<td>हे अ.<br/>-</td>\n<td>हे. अ.<br/>-</td>\n<td>-</td>\n<td>हे. अ.<br/>-</td>\n<td>हे. अ.<br/>-</td>\n<td>(241)६<br/>क्या</td>\n<td>हे. अ.<br/>-</td>\n<td>हे. अ.<br/>-</td>\n<td>हे. आ.<br/>-</td>\n<td>-</td>\n<td>-</td>\n<td>चंद्रमेगाज<br/>बापुराव स्वत:</td>\n<td></td>\n</tr>\n<tr>\n<td>८<br/>८</td>\n<td>एवढ</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>चंद्रमेगाज<br/>बापुराव स्वत:</td>\n<td></td>\n</tr>\n<tr>\n<td>८<br/>८</td>\n<td>अ</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>चंद्रमेगाज<br/>बापुराव स्वत:</td>\n<td></td>\n</tr>\n<tr>\n<td>११<br/>१०</td>\n<td>ख</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>चंद्रमेगाज<br/>बापुराव स्वत:</td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td>चंद्रमेगाज बापुराव<br/>स्वत:</td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+    }
+  ],
+  "markdown": "$$000120$$\n\nगाव नमुना बारा--चालू.\n\n<table>\n<thead>\n<tr>\n<th>१</th>\n<th>२</th>\n<th>३</th>\n<th>४</th>\n<th>५</th>\n<th>६</th>\n<th>७</th>\n<th>८</th>\n<th>९</th>\n<th>१०</th>\n<th>११</th>\n<th>१२</th>\n<th>१३</th>\n<th>१४</th>\n<th>१५</th>\n<th>१६</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>६<br/>८</td>\n<td>एक</td>\n<td>-</td>\n<td>हे अ.<br/>-</td>\n<td>हे. अ.<br/>-</td>\n<td>-</td>\n<td>हे. अ.<br/>-</td>\n<td>हे. अ.<br/>-</td>\n<td>(241)६<br/>क्या</td>\n<td>हे. अ.<br/>-</td>\n<td>हे. अ.<br/>-</td>\n<td>हे. आ.<br/>-</td>\n<td>-</td>\n<td>-</td>\n<td>चंद्रमेगाज<br/>बापुराव स्वत:</td>\n<td></td>\n</tr>\n<tr>\n<td>८<br/>८</td>\n<td>एवढ</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>चंद्रमेगाज<br/>बापुराव स्वत:</td>\n<td></td>\n</tr>\n<tr>\n<td>८<br/>८</td>\n<td>अ</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>चंद्रमेगाज<br/>बापुराव स्वत:</td>\n<td></td>\n</tr>\n<tr>\n<td>११<br/>१०</td>\n<td>ख</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>चंद्रमेगाज<br/>बापुराव स्वत:</td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td>चंद्रमेगाज बापुराव<br/>स्वत:</td>\n<td></td>\n</tr>\n</tbody>\n</table>",
+  "_phase4_inference_seconds": 51.62
+}

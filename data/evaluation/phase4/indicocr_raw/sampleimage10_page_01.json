@@ -1,0 +1,61 @@
+{
+  "image": "sampleimage10_page_01.png",
+  "width": 3469,
+  "height": 4905,
+  "blocks": [
+    {
+      "order": 0,
+      "label": "Header",
+      "type": "PageHeader",
+      "bbox_xyxy": [
+        1363.3,
+        79.5,
+        2836.9,
+        246.2
+      ],
+      "conf": 0.836,
+      "text": ""
+    },
+    {
+      "order": 1,
+      "label": "Title",
+      "type": "Title",
+      "bbox_xyxy": [
+        1364.7,
+        140.3,
+        1999.2,
+        245.2
+      ],
+      "conf": 0.615,
+      "text": "गाव नमुनां बारा-चालू"
+    },
+    {
+      "order": 2,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        2451.2,
+        75.0,
+        2836.6,
+        215.8
+      ],
+      "conf": 0.535,
+      "text": "$$000118$$"
+    },
+    {
+      "order": 3,
+      "label": "Table",
+      "type": "Table",
+      "bbox_xyxy": [
+        32.6,
+        275.2,
+        3457.2,
+        4705.4
+      ],
+      "conf": 0.969,
+      "text": "<table>\n<thead>\n<tr>\n<th rowspan=\"4\">वर्ष<br/>१</th>\n<th rowspan=\"4\">हंगाम<br/>२</th>\n<th colspan=\"8\">पिकाखालील क्षेत्राचा तपशील</th>\n<th colspan=\"3\" rowspan=\"2\">लागवडीसाठी उप-<br/>लब्ध नसलेली जमीन</th>\n<th rowspan=\"4\">जल सिंचनाचे साधन<br/>१४</th>\n<th rowspan=\"4\">कोरा<br/>१५</th>\n</tr>\n<tr>\n<th colspan=\"6\">मिश्र पिकाखालील क्षेत्र</th>\n<th colspan=\"3\">निर्भेळ पिकाखालील क्षेत्र</th>\n</tr>\n<tr>\n<th rowspan=\"2\">मिश्रणाचा संकेत क्रमांक</th>\n<th rowspan=\"2\">जल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th colspan=\"3\">घटक पिके व प्रत्येका-<br/>खालील क्षेत्र</th>\n<th rowspan=\"2\">पिकाचे नाव</th>\n<th rowspan=\"2\">जल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th rowspan=\"2\">स्वस्थ</th>\n<th rowspan=\"2\">क्षेत्र</th>\n<th rowspan=\"2\">जल सिंचनाचे साधन</th>\n</tr>\n<tr>\n<th>पिकाचे नाव</th>\n<th>जल सिंचित</th>\n<th>अजल सिंचित</th>\n</tr>\n<tr>\n<th>३</th>\n<th>४</th>\n<th>५</th>\n<th>६</th>\n<th>७</th>\n<th>८</th>\n<th>९</th>\n<th>१०</th>\n<th>११</th>\n<th>१२</th>\n<th>१३</th>\n<th>१४</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>७९७५</td>\n<td>खऱ्या</td>\n<td>-</td>\n<td>हे.</td>\n<td>आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>-</td>\n<td>३'०८१)</td>\n</tr>\n<tr>\n<td>७९८०<br/>स.नं.१२/१<br/>०=८१३आर</td>\n<td>खऱ्या</td>\n<td>क७</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>१४७५०<br/>गी०<br/>तूर<br/>ब्यांची<br/>मृग</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>आंबा १<br/>चंडभाग १<br/>बापुराव भोटरळ<br/>रुक:<br/>३०<br/>आंबा १</td>\n</tr>\n<tr>\n<td>८११२</td>\n<td>खऱ्या</td>\n<td>खऱ्या</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>चंडभाग १<br/>बापुराव भोटरळ<br/>सारखे २<br/>आंबा १</td>\n</tr>\n<tr>\n<td>८२१३</td>\n<td>खऱ्या</td>\n<td>खऱ्या</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>चंडभाग १<br/>बापुराव भोटरळ<br/>सारखे २<br/>आंबा १</td>\n</tr>\n<tr>\n<td>८३१४</td>\n<td>खऱ्या</td>\n<td>क७</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>चंडभाग १<br/>बापुराव भोटरळ<br/>सारखे २<br/>आंबा १</td>\n</tr>\n<tr>\n<td>८४१६</td>\n<td>खऱ्या</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>चंडभाग १<br/>बापुराव भोटरळ<br/>सारखे २<br/>आंबा १</td>\n</tr>\n</tbody>\n</table>"
+    }
+  ],
+  "markdown": "गाव नमुनां बारा-चालू\n\n$$000118$$\n\n<table>\n<thead>\n<tr>\n<th rowspan=\"4\">वर्ष<br/>१</th>\n<th rowspan=\"4\">हंगाम<br/>२</th>\n<th colspan=\"8\">पिकाखालील क्षेत्राचा तपशील</th>\n<th colspan=\"3\" rowspan=\"2\">लागवडीसाठी उप-<br/>लब्ध नसलेली जमीन</th>\n<th rowspan=\"4\">जल सिंचनाचे साधन<br/>१४</th>\n<th rowspan=\"4\">कोरा<br/>१५</th>\n</tr>\n<tr>\n<th colspan=\"6\">मिश्र पिकाखालील क्षेत्र</th>\n<th colspan=\"3\">निर्भेळ पिकाखालील क्षेत्र</th>\n</tr>\n<tr>\n<th rowspan=\"2\">मिश्रणाचा संकेत क्रमांक</th>\n<th rowspan=\"2\">जल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th colspan=\"3\">घटक पिके व प्रत्येका-<br/>खालील क्षेत्र</th>\n<th rowspan=\"2\">पिकाचे नाव</th>\n<th rowspan=\"2\">जल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th rowspan=\"2\">स्वस्थ</th>\n<th rowspan=\"2\">क्षेत्र</th>\n<th rowspan=\"2\">जल सिंचनाचे साधन</th>\n</tr>\n<tr>\n<th>पिकाचे नाव</th>\n<th>जल सिंचित</th>\n<th>अजल सिंचित</th>\n</tr>\n<tr>\n<th>३</th>\n<th>४</th>\n<th>५</th>\n<th>६</th>\n<th>७</th>\n<th>८</th>\n<th>९</th>\n<th>१०</th>\n<th>११</th>\n<th>१२</th>\n<th>१३</th>\n<th>१४</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>७९७५</td>\n<td>खऱ्या</td>\n<td>-</td>\n<td>हे.</td>\n<td>आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td>-</td>\n<td>३'०८१)</td>\n</tr>\n<tr>\n<td>७९८०<br/>स.नं.१२/१<br/>०=८१३आर</td>\n<td>खऱ्या</td>\n<td>क७</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>१४७५०<br/>गी०<br/>तूर<br/>ब्यांची<br/>मृग</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>आंबा १<br/>चंडभाग १<br/>बापुराव भोटरळ<br/>रुक:<br/>३०<br/>आंबा १</td>\n</tr>\n<tr>\n<td>८११२</td>\n<td>खऱ्या</td>\n<td>खऱ्या</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>चंडभाग १<br/>बापुराव भोटरळ<br/>सारखे २<br/>आंबा १</td>\n</tr>\n<tr>\n<td>८२१३</td>\n<td>खऱ्या</td>\n<td>खऱ्या</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>चंडभाग १<br/>बापुराव भोटरळ<br/>सारखे २<br/>आंबा १</td>\n</tr>\n<tr>\n<td>८३१४</td>\n<td>खऱ्या</td>\n<td>क७</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>चंडभाग १<br/>बापुराव भोटरळ<br/>सारखे २<br/>आंबा १</td>\n</tr>\n<tr>\n<td>८४१६</td>\n<td>खऱ्या</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>३५</td>\n<td>०=०१</td>\n<td>-</td>\n<td>चंडभाग १<br/>बापुराव भोटरळ<br/>सारखे २<br/>आंबा १</td>\n</tr>\n</tbody>\n</table>",
+  "_phase4_inference_seconds": 102.32
+}

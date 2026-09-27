@@ -1,0 +1,415 @@
+{
+  "phase": "Accuracy Improvement — Table-Aware Extraction",
+  "status": "COMPLETE",
+  "raw_artifacts_processed": 5,
+  "note": "No OCR inference is performed. Existing IndicOCR JSON artifacts are reused. Results are limited to pages for which raw block/table JSON exists.",
+  "overall": {
+    "evaluable_fields": 0,
+    "exact_recall": 0,
+    "field_summary": {
+      "survey_gat_number": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "sub_division": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "account_number": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "land_tenure": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "local_field_name": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "cultivable_area": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "holder_name": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      }
+    }
+  },
+  "documents": [
+    {
+      "image": "sampleimage10_page_01.png",
+      "source": "data\\evaluation\\phase4\\indicocr_raw\\sampleimage10_page_01.json",
+      "table_count": 1,
+      "predictions": {},
+      "tables": [
+        {
+          "block_order": 3,
+          "confidence": 0.969,
+          "rows": 11,
+          "columns": 17,
+          "fields": {}
+        }
+      ]
+    },
+    {
+      "image": "sampleimage11_page_01.png",
+      "source": "data\\evaluation\\phase4\\indicocr_raw\\sampleimage11_page_01.json",
+      "table_count": 2,
+      "predictions": {
+        "survey_gat_number": {
+          "value": "९२",
+          "normalized": "92",
+          "header": "भूपा क्रमांक",
+          "row": 1,
+          "col": 0,
+          "header_score": 0.846
+        },
+        "sub_division": {
+          "value": "१",
+          "normalized": "1",
+          "header": "भूभाष क्रमांक चा उपविभाग",
+          "row": 1,
+          "col": 1,
+          "header_score": 1.0
+        },
+        "land_tenure": {
+          "value": "क्रोधവില वर्ग",
+          "normalized": "क्रोधവ ല वर्ग",
+          "header": "भू-धारण पद्धती",
+          "row": 1,
+          "col": 2,
+          "header_score": 0.966
+        },
+        "holder_name": {
+          "value": "ONLY",
+          "normalized": "only",
+          "header": "भोगवटादाराचे नाव",
+          "row": 4,
+          "col": 3,
+          "header_score": 1.0
+        },
+        "account_number": {
+          "value": "इतर अधिकार मुख्यानवरील खर्च वळाई योग्य ३००/- १५/६/९३ वळेरीच्या ३००-२३१३/७१ यांच्यातील योग्य २१६८-०५ (१२६) १६/५/९५",
+          "normalized": "300",
+          "header": "खाते क्रमांक कुळाचे नाव रु. पैसे",
+          "row": 4,
+          "col": 4,
+          "header_score": 1.0
+        },
+        "document_type": {
+          "value": " GPN-E-1469-CJPN-2-83-5,50,000\nG.R., R.D., No. 10022/24 of 18-10-40.] R. V. 24 m गाव नमुना सात $$= \\frac{980}{90225}$$ (अधिकार अभिलेख पत्रक) [मह राष्ट्र जमी। महसूल अधिक र अभिलेख आणि नोंदवहम (तय.र करणे व सुस्थितीत ठेवणे) ।.यम, १९०१ व तील नियम ३, ५, ९ अ.णि ७] गान...कवळी त लुका... 3.4.2 गाव नमुना बारा\nपिकांची नोंदवही [महाराष्ट्र जमीन महबुल अधिकार अभिलेख अणि नोंदवल्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम २९] $$\\begin{array}{r}\n\\text{୪ ୧}\\\\\n\\text{୨ ୨}\\\\\n\\hline\n\\text{୨}\n\\end{array}$$",
+          "method": "section_text_candidate"
+        }
+      },
+      "tables": [
+        {
+          "block_order": 9,
+          "confidence": 0.937,
+          "rows": 12,
+          "columns": 5,
+          "fields": {
+            "survey_gat_number": {
+              "value": "९२",
+              "normalized": "92",
+              "header": "भूपा क्रमांक",
+              "row": 1,
+              "col": 0,
+              "header_score": 0.846
+            },
+            "sub_division": {
+              "value": "१",
+              "normalized": "1",
+              "header": "भूभाष क्रमांक चा उपविभाग",
+              "row": 1,
+              "col": 1,
+              "header_score": 1.0
+            },
+            "land_tenure": {
+              "value": "क्रोधവില वर्ग",
+              "normalized": "क्रोधവ ല वर्ग",
+              "header": "भू-धारण पद्धती",
+              "row": 1,
+              "col": 2,
+              "header_score": 0.966
+            },
+            "holder_name": {
+              "value": "ONLY",
+              "normalized": "only",
+              "header": "भोगवटादाराचे नाव",
+              "row": 4,
+              "col": 3,
+              "header_score": 1.0
+            },
+            "account_number": {
+              "value": "इतर अधिकार मुख्यानवरील खर्च वळाई योग्य ३००/- १५/६/९३ वळेरीच्या ३००-२३१३/७१ यांच्यातील योग्य २१६८-०५ (१२६) १६/५/९५",
+              "normalized": "300",
+              "header": "खाते क्रमांक कुळाचे नाव रु. पैसे",
+              "row": 4,
+              "col": 4,
+              "header_score": 1.0
+            }
+          }
+        },
+        {
+          "block_order": 12,
+          "confidence": 0.938,
+          "rows": 6,
+          "columns": 16,
+          "fields": {}
+        }
+      ]
+    },
+    {
+      "image": "sampleimage12_page_01.png",
+      "source": "data\\evaluation\\phase4\\indicocr_raw\\sampleimage12_page_01.json",
+      "table_count": 1,
+      "predictions": {
+        "document_type": {
+          "value": " $$000120$$ गाव नमुना बारा--चालू.",
+          "method": "section_text_candidate"
+        }
+      },
+      "tables": [
+        {
+          "block_order": 3,
+          "confidence": 0.831,
+          "rows": 6,
+          "columns": 16,
+          "fields": {}
+        }
+      ]
+    },
+    {
+      "image": "sampleimage1_page_01.png",
+      "source": "data\\evaluation\\phase4\\indicocr_raw\\sampleimage1_page_01.json",
+      "table_count": 2,
+      "predictions": {
+        "survey_gat_number": {
+          "value": "४८",
+          "normalized": "48",
+          "header": "भूमापन क्रमांक",
+          "row": 1,
+          "col": 0,
+          "header_score": 1.0
+        },
+        "sub_division": {
+          "value": "-",
+          "normalized": "",
+          "header": "भूमापन क्रमांकाचा उपविभाग",
+          "row": 1,
+          "col": 1,
+          "header_score": 1.0
+        },
+        "land_tenure": {
+          "value": "मोगवटादार वर्ग १",
+          "normalized": "मोगवटादार वर्ग 1",
+          "header": "भू-धारणा पद्धती",
+          "row": 1,
+          "col": 2,
+          "header_score": 1.0
+        },
+        "holder_name": {
+          "value": "“ ई क्लास ” मोफत गुरे चारण्या वरीनां",
+          "normalized": "ई क्लास मोफत गुरे चारण्या वरीनां",
+          "header": "भोगवटादाराचे नाव",
+          "row": 2,
+          "col": 3,
+          "header_score": 1.0
+        },
+        "account_number": {
+          "value": "कुळाचे नाव खंड रु. पैसे",
+          "normalized": "",
+          "header": "खाते क्रमांक",
+          "row": 2,
+          "col": 4,
+          "header_score": 1.0
+        },
+        "document_type": {
+          "value": " शा. मु. औ.-(सीए) ३९\nG. R., R. D., No. 10022/24 of 18-10-40.] गाय नमुना सात\n\n(अधिकार अभिलेख पत्रक)  [महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवह्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम इ.प. ६ आणि ७]\nगाँव .........आळोर ......... तालुका .........आळोर......... 903 गाज नमुन्या बारा\nपिकांची नोंदवही\n[महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवहथा (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम २९]",
+          "method": "section_text_candidate"
+        }
+      },
+      "tables": [
+        {
+          "block_order": 5,
+          "confidence": 0.962,
+          "rows": 7,
+          "columns": 5,
+          "fields": {
+            "survey_gat_number": {
+              "value": "४८",
+              "normalized": "48",
+              "header": "भूमापन क्रमांक",
+              "row": 1,
+              "col": 0,
+              "header_score": 1.0
+            },
+            "sub_division": {
+              "value": "-",
+              "normalized": "",
+              "header": "भूमापन क्रमांकाचा उपविभाग",
+              "row": 1,
+              "col": 1,
+              "header_score": 1.0
+            },
+            "land_tenure": {
+              "value": "मोगवटादार वर्ग १",
+              "normalized": "मोगवटादार वर्ग 1",
+              "header": "भू-धारणा पद्धती",
+              "row": 1,
+              "col": 2,
+              "header_score": 1.0
+            },
+            "holder_name": {
+              "value": "“ ई क्लास ” मोफत गुरे चारण्या वरीनां",
+              "normalized": "ई क्लास मोफत गुरे चारण्या वरीनां",
+              "header": "भोगवटादाराचे नाव",
+              "row": 2,
+              "col": 3,
+              "header_score": 1.0
+            },
+            "account_number": {
+              "value": "कुळाचे नाव खंड रु. पैसे",
+              "normalized": "",
+              "header": "खाते क्रमांक",
+              "row": 2,
+              "col": 4,
+              "header_score": 1.0
+            }
+          }
+        },
+        {
+          "block_order": 7,
+          "confidence": 0.931,
+          "rows": 6,
+          "columns": 16,
+          "fields": {}
+        }
+      ]
+    },
+    {
+      "image": "sampleimage1_page_01.png",
+      "source": "data\\evaluation\\indicocr_test_sample1.json",
+      "table_count": 2,
+      "predictions": {
+        "survey_gat_number": {
+          "value": "४८",
+          "normalized": "48",
+          "header": "भूमापन क्रमांक",
+          "row": 1,
+          "col": 0,
+          "header_score": 1.0
+        },
+        "sub_division": {
+          "value": "-",
+          "normalized": "",
+          "header": "भूमापन क्रमांकाचा उपविभाग",
+          "row": 1,
+          "col": 1,
+          "header_score": 1.0
+        },
+        "land_tenure": {
+          "value": "मोगवटादार वर्ग १",
+          "normalized": "मोगवटादार वर्ग 1",
+          "header": "भू-धारणा पद्धती",
+          "row": 1,
+          "col": 2,
+          "header_score": 1.0
+        },
+        "holder_name": {
+          "value": "“ ई क्लास ” मोफत गुरे चारण्या वरीनां",
+          "normalized": "ई क्लास मोफत गुरे चारण्या वरीनां",
+          "header": "भोगवटादाराचे नाव",
+          "row": 2,
+          "col": 3,
+          "header_score": 1.0
+        },
+        "account_number": {
+          "value": "कुळाचे नाव खंड रु. पैसे",
+          "normalized": "",
+          "header": "खाते क्रमांक",
+          "row": 2,
+          "col": 4,
+          "header_score": 1.0
+        },
+        "document_type": {
+          "value": " शा. मु. औ.-(सीए) ३९\nG. R., R. D., No. 10022/24 of 18-10-40.] गाय नमुना सात\n\n(अधिकार अभिलेख पत्रक)  [महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवह्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम इ.प. ६ आणि ७]\nगाँव .........आळोर ......... तालुका .........आळोर......... 903 गाज नमुन्या बारा\nपिकांची नोंदवही\n[महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवहथा (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम २९]",
+          "method": "section_text_candidate"
+        }
+      },
+      "tables": [
+        {
+          "block_order": 5,
+          "confidence": 0.962,
+          "rows": 7,
+          "columns": 5,
+          "fields": {
+            "survey_gat_number": {
+              "value": "४८",
+              "normalized": "48",
+              "header": "भूमापन क्रमांक",
+              "row": 1,
+              "col": 0,
+              "header_score": 1.0
+            },
+            "sub_division": {
+              "value": "-",
+              "normalized": "",
+              "header": "भूमापन क्रमांकाचा उपविभाग",
+              "row": 1,
+              "col": 1,
+              "header_score": 1.0
+            },
+            "land_tenure": {
+              "value": "मोगवटादार वर्ग १",
+              "normalized": "मोगवटादार वर्ग 1",
+              "header": "भू-धारणा पद्धती",
+              "row": 1,
+              "col": 2,
+              "header_score": 1.0
+            },
+            "holder_name": {
+              "value": "“ ई क्लास ” मोफत गुरे चारण्या वरीनां",
+              "normalized": "ई क्लास मोफत गुरे चारण्या वरीनां",
+              "header": "भोगवटादाराचे नाव",
+              "row": 2,
+              "col": 3,
+              "header_score": 1.0
+            },
+            "account_number": {
+              "value": "कुळाचे नाव खंड रु. पैसे",
+              "normalized": "",
+              "header": "खाते क्रमांक",
+              "row": 2,
+              "col": 4,
+              "header_score": 1.0
+            }
+          }
+        },
+        {
+          "block_order": 7,
+          "confidence": 0.931,
+          "rows": 6,
+          "columns": 16,
+          "fields": {}
+        }
+      ]
+    }
+  ]
+}

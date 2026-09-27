@@ -1,0 +1,4922 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+BhoomiAI — Field Ground Truth
+</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    background: #f3f4f6;
+
+    color: #111827;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 50;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 14px 20px;
+
+    background: white;
+
+    border-bottom:
+        1px solid #d1d5db;
+}
+
+
+header h1 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+button {
+    border: 0;
+
+    border-radius: 7px;
+
+    padding:
+        10px 15px;
+
+    background: #166534;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+button.secondary {
+    background: #4b5563;
+}
+
+
+button:hover {
+    opacity: 0.92;
+}
+
+
+.container {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+}
+
+
+.instructions {
+    margin-bottom: 20px;
+
+    padding: 16px;
+
+    background: white;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    line-height: 1.55;
+}
+
+
+#overall-progress {
+    margin-top: 12px;
+
+    font-weight: bold;
+}
+
+
+.sample {
+    margin-bottom: 30px;
+
+    padding: 16px;
+
+    background: white;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 10px;
+}
+
+
+.sample-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+
+.sample-header h2 {
+    margin: 0;
+
+    font-size: 17px;
+}
+
+
+.sample-status {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        1fr;
+
+    gap: 16px;
+}
+
+
+.panel {
+    overflow: hidden;
+
+    background: #fafafa;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 8px;
+}
+
+
+.panel-title {
+    padding:
+        10px 12px;
+
+    background: #eef2f7;
+
+    border-bottom:
+        1px solid #d1d5db;
+
+    font-weight: bold;
+}
+
+
+.image-container {
+    max-height: 850px;
+
+    overflow: auto;
+
+    padding: 10px;
+
+    background: #e5e7eb;
+}
+
+
+.image-container img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    background: white;
+}
+
+
+.fields {
+    padding: 14px;
+}
+
+
+.field-row {
+    margin-bottom: 14px;
+
+    padding-bottom: 14px;
+
+    border-bottom:
+        1px solid #e5e7eb;
+}
+
+
+.field-row:last-child {
+    border-bottom: none;
+
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+}
+
+
+.field-label {
+    margin-bottom: 6px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.field-controls {
+    display: grid;
+
+    grid-template-columns:
+        190px
+        1fr;
+
+    gap: 8px;
+}
+
+
+.field-controls select,
+.field-controls input {
+    width: 100%;
+
+    min-width: 0;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+    background: white;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.field-controls input:disabled {
+    background: #f3f4f6;
+
+    color: #9ca3af;
+}
+
+
+.field-controls select:focus,
+.field-controls input:focus {
+    border-color: #64748b;
+}
+
+
+.complete {
+    color: #166534;
+}
+
+
+.incomplete {
+    color: #92400e;
+}
+
+
+@media (max-width: 1000px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field-controls {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        position: static;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>
+BhoomiAI — Field Ground Truth
+</h1>
+
+
+<div class="header-actions">
+
+<button
+    class="secondary"
+    onclick="clearSavedWork()"
+>
+Clear Saved Work
+</button>
+
+
+<button
+    onclick="downloadCSV()"
+>
+Download field_ground_truth.csv
+</button>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="instructions">
+
+<strong>
+How to annotate
+</strong>
+
+
+<p>
+For each field, choose one status:
+<strong>Present</strong>,
+<strong>Not visible / Not applicable</strong>,
+or
+<strong>Present but unreadable</strong>.
+</p>
+
+
+<p>
+Choose <strong>Present</strong> only when the value is actually visible
+and readable. Then enter the value exactly as shown in the document.
+</p>
+
+
+<p>
+Choose <strong>Not visible / Not applicable</strong> when that field
+does not appear on this page.
+</p>
+
+
+<p>
+Choose <strong>Present but unreadable</strong> when the field appears
+to exist but you cannot reliably determine its value.
+</p>
+
+
+<p>
+<strong>Do not guess.</strong>
+</p>
+
+
+<div id="overall-progress">
+Loading...
+</div>
+
+</div>
+
+
+
+            <section
+                class="sample"
+                data-index="0"
+                data-image="sampleimage10_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 1 / 12
+                        — sampleimage10_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-0"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage10_page_01.png"
+                                alt="sampleimage10_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-0"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-0"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-0"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-0"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-0"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-0"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-0"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-0"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-0"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-0"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-0"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-0"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-0"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-0"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-0"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-0"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-0"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-0"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-0"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-0"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="1"
+                data-image="sampleimage11_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 2 / 12
+                        — sampleimage11_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-1"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage11_page_01.png"
+                                alt="sampleimage11_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-1"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-1"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-1"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-1"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-1"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-1"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-1"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-1"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-1"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-1"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-1"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-1"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-1"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-1"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-1"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-1"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-1"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-1"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-1"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-1"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="2"
+                data-image="sampleimage12_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 3 / 12
+                        — sampleimage12_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-2"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage12_page_01.png"
+                                alt="sampleimage12_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-2"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-2"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-2"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-2"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-2"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-2"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-2"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-2"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-2"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-2"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-2"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-2"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-2"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-2"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-2"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-2"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-2"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-2"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-2"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-2"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="3"
+                data-image="sampleimage1_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 4 / 12
+                        — sampleimage1_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-3"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage1_page_01.png"
+                                alt="sampleimage1_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-3"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-3"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-3"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-3"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-3"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-3"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-3"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-3"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-3"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-3"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-3"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-3"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-3"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-3"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-3"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-3"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-3"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-3"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-3"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-3"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="4"
+                data-image="sampleimage2_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 5 / 12
+                        — sampleimage2_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-4"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage2_page_01.png"
+                                alt="sampleimage2_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-4"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-4"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-4"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-4"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-4"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-4"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-4"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-4"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-4"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-4"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-4"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-4"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-4"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-4"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-4"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-4"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-4"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-4"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-4"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-4"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="5"
+                data-image="sampleimage3_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 6 / 12
+                        — sampleimage3_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-5"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage3_page_01.png"
+                                alt="sampleimage3_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-5"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-5"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-5"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-5"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-5"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-5"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-5"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-5"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-5"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-5"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-5"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-5"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-5"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-5"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-5"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-5"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-5"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-5"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-5"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-5"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="6"
+                data-image="sampleimage4_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 7 / 12
+                        — sampleimage4_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-6"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage4_page_01.png"
+                                alt="sampleimage4_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-6"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-6"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-6"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-6"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-6"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-6"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-6"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-6"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-6"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-6"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-6"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-6"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-6"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-6"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-6"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-6"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-6"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-6"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-6"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-6"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="7"
+                data-image="sampleimage5_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 8 / 12
+                        — sampleimage5_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-7"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage5_page_01.png"
+                                alt="sampleimage5_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-7"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-7"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-7"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-7"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-7"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-7"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-7"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-7"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-7"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-7"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-7"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-7"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-7"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-7"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-7"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-7"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-7"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-7"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-7"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-7"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="8"
+                data-image="sampleimage6_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 9 / 12
+                        — sampleimage6_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-8"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage6_page_01.png"
+                                alt="sampleimage6_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-8"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-8"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-8"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-8"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-8"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-8"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-8"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-8"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-8"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-8"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-8"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-8"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-8"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-8"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-8"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-8"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-8"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-8"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-8"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-8"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="9"
+                data-image="sampleimage7_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 10 / 12
+                        — sampleimage7_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-9"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage7_page_01.png"
+                                alt="sampleimage7_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-9"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-9"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-9"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-9"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-9"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-9"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-9"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-9"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-9"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-9"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-9"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-9"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-9"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-9"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-9"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-9"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-9"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-9"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-9"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-9"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="10"
+                data-image="sampleimage8_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 11 / 12
+                        — sampleimage8_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-10"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage8_page_01.png"
+                                alt="sampleimage8_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-10"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-10"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-10"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-10"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-10"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-10"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-10"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-10"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-10"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-10"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-10"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-10"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-10"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-10"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-10"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-10"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-10"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-10"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-10"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-10"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+            <section
+                class="sample"
+                data-index="11"
+                data-image="sampleimage9_page_01.png"
+            >
+
+                <div class="sample-header">
+
+                    <h2>
+                        Sample 12 / 12
+                        — sampleimage9_page_01.png
+                    </h2>
+
+                    <span
+                        class="sample-status"
+                        id="sample-status-11"
+                    >
+                        0 / 10 reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="grid">
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Scanned Document
+                        </div>
+
+                        <div class="image-container">
+
+                            <img
+                                src="rendered/sampleimage9_page_01.png"
+                                alt="sampleimage9_page_01.png"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-title">
+                            Ground Truth Fields
+                        </div>
+
+                        <div class="fields">
+
+                            
+    <div class="field-row">
+
+        <div class="field-label">
+            Document Type
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-document_type-11"
+                data-status-for="document_type"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-document_type-11"
+                data-value-for="document_type"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Village
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-village-11"
+                data-status-for="village"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-village-11"
+                data-value-for="village"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Taluka
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-taluka-11"
+                data-status-for="taluka"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-taluka-11"
+                data-value-for="taluka"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Survey / Gat Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-survey_gat_number-11"
+                data-status-for="survey_gat_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-survey_gat_number-11"
+                data-value-for="survey_gat_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Sub-division
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-sub_division-11"
+                data-status-for="sub_division"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-sub_division-11"
+                data-value-for="sub_division"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Account Number
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-account_number-11"
+                data-status-for="account_number"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-account_number-11"
+                data-value-for="account_number"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Occupant / Holder Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-holder_name-11"
+                data-status-for="holder_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-holder_name-11"
+                data-value-for="holder_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Cultivable Area
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-cultivable_area-11"
+                data-status-for="cultivable_area"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-cultivable_area-11"
+                data-value-for="cultivable_area"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Land Tenure / System
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-land_tenure-11"
+                data-status-for="land_tenure"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-land_tenure-11"
+                data-value-for="land_tenure"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+    <div class="field-row">
+
+        <div class="field-label">
+            Local Field Name
+        </div>
+
+        <div class="field-controls">
+
+            <select
+                id="status-local_field_name-11"
+                data-status-for="local_field_name"
+            >
+                <option value="" selected>Select status</option><option value="present">Present</option><option value="not_visible">Not visible / Not applicable</option><option value="unreadable">Present but unreadable</option>
+            </select>
+
+            <input
+                id="value-local_field_name-11"
+                data-value-for="local_field_name"
+                type="text"
+                placeholder="Enter value only when status is Present"
+                disabled
+            >
+
+        </div>
+
+    </div>
+    
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+
+
+</div>
+
+
+<script>
+
+
+const STORAGE_KEY =
+    "bhoomiai_field_ground_truth_v3";
+
+
+const fieldNames = [
+
+    "document_type",
+
+    "village",
+
+    "taluka",
+
+    "survey_gat_number",
+
+    "sub_division",
+
+    "account_number",
+
+    "holder_name",
+
+    "cultivable_area",
+
+    "land_tenure",
+
+    "local_field_name",
+
+];
+
+
+function updateFieldState(select) {
+
+    const field =
+        select.getAttribute("data-status-for");
+
+    const section =
+        select.closest(".sample");
+
+    const index =
+        section.getAttribute("data-index");
+
+    const input =
+        document.getElementById(
+            "value-" +
+            field +
+            "-" +
+            index
+        );
+
+    if (
+        select.value === "present"
+    ) {
+
+        input.disabled = false;
+
+    } else {
+
+        input.disabled = true;
+        input.value = "";
+
+    }
+
+    saveWork();
+
+    updateProgress();
+}
+
+
+function saveWork() {
+
+    const data = {};
+
+    document
+        .querySelectorAll(".sample")
+        .forEach(function(section) {
+
+            const index =
+                section.getAttribute("data-index");
+
+            const item = {};
+
+            fieldNames.forEach(function(field) {
+
+                const status =
+                    document.getElementById(
+                        "status-" +
+                        field +
+                        "-" +
+                        index
+                    );
+
+                const value =
+                    document.getElementById(
+                        "value-" +
+                        field +
+                        "-" +
+                        index
+                    );
+
+                item[field] =
+                    status.value;
+
+                item[field + "_value"] =
+                    value.value;
+
+            });
+
+            data[index] = item;
+
+        });
+
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(data)
+    );
+}
+
+
+function restoreWork() {
+
+    const raw =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+    if (!raw) {
+        return;
+    }
+
+
+    let data;
+
+    try {
+
+        data = JSON.parse(raw);
+
+    } catch (error) {
+
+        return;
+    }
+
+
+    Object.keys(data).forEach(function(index) {
+
+        const item =
+            data[index];
+
+
+        fieldNames.forEach(function(field) {
+
+            const status =
+                document.getElementById(
+                    "status-" +
+                    field +
+                    "-" +
+                    index
+                );
+
+            const value =
+                document.getElementById(
+                    "value-" +
+                    field +
+                    "-" +
+                    index
+                );
+
+
+            if (!status || !value) {
+                return;
+            }
+
+
+            status.value =
+                item[field] || "";
+
+
+            value.value =
+                item[field + "_value"] || "";
+
+
+            if (
+                status.value === "present"
+            ) {
+
+                value.disabled = false;
+
+            } else {
+
+                value.disabled = true;
+
+            }
+
+        });
+
+    });
+}
+
+
+function updateProgress() {
+
+    const sections =
+        document.querySelectorAll(".sample");
+
+    let totalReviewed = 0;
+
+    let totalFields =
+        sections.length *
+        fieldNames.length;
+
+
+    sections.forEach(function(section) {
+
+        const index =
+            section.getAttribute("data-index");
+
+        let reviewed = 0;
+
+
+        fieldNames.forEach(function(field) {
+
+            const status =
+                document.getElementById(
+                    "status-" +
+                    field +
+                    "-" +
+                    index
+                );
+
+
+            if (
+                status &&
+                status.value !== ""
+            ) {
+
+                reviewed++;
+
+                totalReviewed++;
+
+            }
+
+        });
+
+
+        const statusLabel =
+            document.getElementById(
+                "sample-status-" +
+                index
+            );
+
+
+        statusLabel.textContent =
+            reviewed +
+            " / " +
+            fieldNames.length +
+            " reviewed";
+
+
+        if (
+            reviewed === fieldNames.length
+        ) {
+
+            statusLabel.className =
+                "sample-status complete";
+
+        } else {
+
+            statusLabel.className =
+                "sample-status incomplete";
+
+        }
+
+    });
+
+
+    document.getElementById(
+        "overall-progress"
+    ).textContent =
+        "Overall progress: " +
+        totalReviewed +
+        " / " +
+        totalFields +
+        " fields reviewed";
+}
+
+
+function clearSavedWork() {
+
+    const confirmed =
+        confirm(
+            "Clear all saved annotation work?"
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    localStorage.removeItem(
+        STORAGE_KEY
+    );
+
+
+    location.reload();
+}
+
+
+function csvEscape(value) {
+
+    return '"' +
+        String(value || "")
+            .replace(/"/g, '""')
+            .replace(/\r\n/g, "\n")
+            .replace(/\r/g, "\n") +
+        '"';
+}
+
+
+function downloadCSV() {
+
+    const sections =
+        document.querySelectorAll(".sample");
+
+
+    let csv = "image";
+
+
+    fieldNames.forEach(function(field) {
+
+        csv +=
+            "," +
+            csvEscape(field);
+
+        csv +=
+            "," +
+            csvEscape(
+                field + "_status"
+            );
+
+    });
+
+
+    csv += "\r\n";
+
+
+    sections.forEach(function(section) {
+
+        const image =
+            section.getAttribute(
+                "data-image"
+            );
+
+
+        csv +=
+            csvEscape(
+                "data/evaluation/rendered/" +
+                image
+            );
+
+
+        const index =
+            section.getAttribute(
+                "data-index"
+            );
+
+
+        fieldNames.forEach(function(field) {
+
+            const status =
+                document.getElementById(
+                    "status-" +
+                    field +
+                    "-" +
+                    index
+                );
+
+
+            const value =
+                document.getElementById(
+                    "value-" +
+                    field +
+                    "-" +
+                    index
+                );
+
+
+            csv +=
+                "," +
+                csvEscape(
+                    value
+                        ? value.value.trim()
+                        : ""
+                );
+
+
+            csv +=
+                "," +
+                csvEscape(
+                    status
+                        ? status.value
+                        : ""
+                );
+
+        });
+
+
+        csv += "\r\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            ["\uFEFF" + csv],
+            {
+                type:
+                    "text/csv;charset=utf-8"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+    link.download =
+        "field_ground_truth.csv";
+
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+}
+
+
+document
+    .querySelectorAll(
+        "select[data-status-for]"
+    )
+    .forEach(function(select) {
+
+        select.addEventListener(
+            "change",
+            function() {
+                updateFieldState(select);
+            }
+        );
+
+    });
+
+
+document
+    .querySelectorAll(
+        "input[data-value-for]"
+    )
+    .forEach(function(input) {
+
+        input.addEventListener(
+            "input",
+            function() {
+
+                saveWork();
+                updateProgress();
+
+            }
+        );
+
+    });
+
+
+restoreWork();
+
+updateProgress();
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Runtime storage
+backend/storage/
+backend/logs/
+
+# ML / data artifacts
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.bin
+models/
+artifacts/
+experiments/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Test/cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local phase backups / development history
+phase*_backup/
+phase13b_backup/
+phase14_complete_backup_*/
+phase14_frontend_backup_*/
+*.bak-phase14
+
+# Local diagnostics
+handwritten_ocr_diagnostic.py
+handwritten_ocr_test.txt
+extraction_diagnostic.txt
+
+# Local-only evaluation document
+data/evaluation/images/EVSSS - Google Docs.pdf

@@ -1,0 +1,393 @@
+{
+  "phase": "Accuracy Improvement — Final Phase 4 Extraction Batch",
+  "status": "COMPLETE",
+  "ground_truth_used": "data/evaluation/field_ground_truth_phase4.csv",
+  "ground_truth_rows": 12,
+  "unique_raw_documents_processed": 4,
+  "deduplication": "one evaluation record per image basename",
+  "ocr_inference_performed": false,
+  "overall": {
+    "evaluable_fields": 6,
+    "extracted_fields": 2,
+    "extraction_coverage": 0.3333333333333333,
+    "exact_matches": 1,
+    "exact_recall": 0.16666666666666666,
+    "field_summary": {
+      "survey_gat_number": {
+        "evaluable": 4,
+        "extracted": 1,
+        "exact": 1,
+        "extraction_coverage": 0.25,
+        "exact_recall": 0.25,
+        "mean_similarity": 0.25
+      },
+      "sub_division": {
+        "evaluable": 0,
+        "extracted": 0,
+        "exact": 0,
+        "extraction_coverage": null,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "account_number": {
+        "evaluable": 0,
+        "extracted": 0,
+        "exact": 0,
+        "extraction_coverage": null,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "holder_name": {
+        "evaluable": 0,
+        "extracted": 0,
+        "exact": 0,
+        "extraction_coverage": null,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "cultivable_area": {
+        "evaluable": 0,
+        "extracted": 0,
+        "exact": 0,
+        "extraction_coverage": null,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "land_tenure": {
+        "evaluable": 1,
+        "extracted": 1,
+        "exact": 0,
+        "extraction_coverage": 1.0,
+        "exact_recall": 0.0,
+        "mean_similarity": 0.0
+      },
+      "local_field_name": {
+        "evaluable": 1,
+        "extracted": 0,
+        "exact": 0,
+        "extraction_coverage": 0.0,
+        "exact_recall": 0.0,
+        "mean_similarity": 0.0
+      }
+    },
+    "failures": [
+      {
+        "image": "sampleimage10_page_01.png",
+        "field": "survey_gat_number",
+        "ground_truth": "48",
+        "prediction": "",
+        "similarity": 0.0
+      },
+      {
+        "image": "sampleimage12_page_01.png",
+        "field": "survey_gat_number",
+        "ground_truth": "92",
+        "prediction": "",
+        "similarity": 0.0
+      },
+      {
+        "image": "sampleimage12_page_01.png",
+        "field": "land_tenure",
+        "ground_truth": "कोरडवाहू",
+        "prediction": "-",
+        "similarity": 0.0
+      },
+      {
+        "image": "sampleimage12_page_01.png",
+        "field": "local_field_name",
+        "ground_truth": "सिरगाव",
+        "prediction": "",
+        "similarity": 0.0
+      },
+      {
+        "image": "sampleimage1_page_01.png",
+        "field": "survey_gat_number",
+        "ground_truth": "48",
+        "prediction": "",
+        "similarity": 0.0
+      }
+    ]
+  },
+  "documents": [
+    {
+      "image": "sampleimage10_page_01.png",
+      "predictions": {
+        "cultivable_area": {
+          "value": "क्षेत्र",
+          "normalized": "क्षेत्र",
+          "header_score": 0.93,
+          "header_row": 2,
+          "header_col": 12,
+          "value_row": 3,
+          "value_col": 12
+        },
+        "land_tenure": {
+          "value": "क७",
+          "normalized": "क7",
+          "header_score": 0.93,
+          "header_row": 5,
+          "header_col": 2,
+          "value_row": 6,
+          "value_col": 2
+        }
+      },
+      "tables": [
+        {
+          "block_order": 3,
+          "confidence": 0.969,
+          "rows": 11,
+          "columns": 17,
+          "fields": {
+            "cultivable_area": {
+              "value": "क्षेत्र",
+              "normalized": "क्षेत्र",
+              "header_score": 0.93,
+              "header_row": 2,
+              "header_col": 12,
+              "value_row": 3,
+              "value_col": 12
+            },
+            "land_tenure": {
+              "value": "क७",
+              "normalized": "क7",
+              "header_score": 0.93,
+              "header_row": 5,
+              "header_col": 2,
+              "value_row": 6,
+              "value_col": 2
+            }
+          }
+        }
+      ],
+      "table_count": 1
+    },
+    {
+      "image": "sampleimage11_page_01.png",
+      "predictions": {
+        "survey_gat_number": {
+          "value": "९२",
+          "normalized": "92",
+          "header_score": 1.0,
+          "header_row": 0,
+          "header_col": 0,
+          "value_row": 1,
+          "value_col": 0
+        },
+        "sub_division": {
+          "value": "१",
+          "normalized": "1",
+          "header_score": 1.0,
+          "header_row": 0,
+          "header_col": 1,
+          "value_row": 1,
+          "value_col": 1
+        },
+        "account_number": {
+          "value": "इतर अधिकार मुख्यानवरील खर्च वळाई योग्य ३००/- १५/६/९३ वळेरीच्या ३००-२३१३/७१ यांच्यातील योग्य २१६८-०५ (१२६) १६/५/९५",
+          "normalized": "300",
+          "header_score": 0.93,
+          "header_row": 0,
+          "header_col": 4,
+          "value_row": 4,
+          "value_col": 4
+        },
+        "holder_name": {
+          "value": "भोगवटादाराचे नाव",
+          "normalized": "भोगवटादाराचे नाव",
+          "header_score": 1.0,
+          "header_row": 0,
+          "header_col": 3,
+          "value_row": 1,
+          "value_col": 3
+        },
+        "cultivable_area": {
+          "value": "एकूण ..",
+          "normalized": "एकूण ..",
+          "header_score": 0.895,
+          "header_row": 3,
+          "header_col": 0,
+          "value_row": 6,
+          "value_col": 0
+        },
+        "land_tenure": {
+          "value": "क्रोधവില वर्ग",
+          "normalized": "क्रोधവ ല वर्ग",
+          "header_score": 0.966,
+          "header_row": 0,
+          "header_col": 2,
+          "value_row": 1,
+          "value_col": 2
+        },
+        "local_field_name": {
+          "value": "ल.गबडीयोग्य क्षेत्र",
+          "normalized": "ल.गबडीयोग्य क्षेत्र",
+          "header_score": 1.0,
+          "header_row": 2,
+          "header_col": 0,
+          "value_row": 3,
+          "value_col": 0
+        }
+      },
+      "tables": [
+        {
+          "block_order": 9,
+          "confidence": 0.937,
+          "rows": 12,
+          "columns": 5,
+          "fields": {
+            "survey_gat_number": {
+              "value": "९२",
+              "normalized": "92",
+              "header_score": 1.0,
+              "header_row": 0,
+              "header_col": 0,
+              "value_row": 1,
+              "value_col": 0
+            },
+            "sub_division": {
+              "value": "१",
+              "normalized": "1",
+              "header_score": 1.0,
+              "header_row": 0,
+              "header_col": 1,
+              "value_row": 1,
+              "value_col": 1
+            },
+            "account_number": {
+              "value": "इतर अधिकार मुख्यानवरील खर्च वळाई योग्य ३००/- १५/६/९३ वळेरीच्या ३००-२३१३/७१ यांच्यातील योग्य २१६८-०५ (१२६) १६/५/९५",
+              "normalized": "300",
+              "header_score": 0.93,
+              "header_row": 0,
+              "header_col": 4,
+              "value_row": 4,
+              "value_col": 4
+            },
+            "holder_name": {
+              "value": "भोगवटादाराचे नाव",
+              "normalized": "भोगवटादाराचे नाव",
+              "header_score": 1.0,
+              "header_row": 0,
+              "header_col": 3,
+              "value_row": 1,
+              "value_col": 3
+            },
+            "cultivable_area": {
+              "value": "एकूण ..",
+              "normalized": "एकूण ..",
+              "header_score": 0.895,
+              "header_row": 3,
+              "header_col": 0,
+              "value_row": 6,
+              "value_col": 0
+            },
+            "land_tenure": {
+              "value": "क्रोधവില वर्ग",
+              "normalized": "क्रोधവ ല वर्ग",
+              "header_score": 0.966,
+              "header_row": 0,
+              "header_col": 2,
+              "value_row": 1,
+              "value_col": 2
+            },
+            "local_field_name": {
+              "value": "ल.गबडीयोग्य क्षेत्र",
+              "normalized": "ल.गबडीयोग्य क्षेत्र",
+              "header_score": 1.0,
+              "header_row": 2,
+              "header_col": 0,
+              "value_row": 3,
+              "value_col": 0
+            }
+          }
+        },
+        {
+          "block_order": 12,
+          "confidence": 0.938,
+          "rows": 6,
+          "columns": 16,
+          "fields": {
+            "land_tenure": {
+              "value": "-",
+              "normalized": "-",
+              "header_score": 0.93,
+              "header_row": 5,
+              "header_col": 2,
+              "value_row": 5,
+              "value_col": 3
+            }
+          }
+        }
+      ],
+      "table_count": 2
+    },
+    {
+      "image": "sampleimage12_page_01.png",
+      "predictions": {
+        "land_tenure": {
+          "value": "-",
+          "normalized": "-",
+          "header_score": 0.93,
+          "header_row": 1,
+          "header_col": 2,
+          "value_row": 2,
+          "value_col": 2
+        }
+      },
+      "tables": [
+        {
+          "block_order": 3,
+          "confidence": 0.831,
+          "rows": 6,
+          "columns": 16,
+          "fields": {
+            "land_tenure": {
+              "value": "-",
+              "normalized": "-",
+              "header_score": 0.93,
+              "header_row": 1,
+              "header_col": 2,
+              "value_row": 2,
+              "value_col": 2
+            }
+          }
+        }
+      ],
+      "table_count": 1
+    },
+    {
+      "image": "sampleimage1_page_01.png",
+      "predictions": {
+        "cultivable_area": {
+          "value": "क्षेत्र",
+          "normalized": "क्षेत्र",
+          "header_score": 0.93,
+          "header_row": 2,
+          "header_col": 12,
+          "value_row": 3,
+          "value_col": 12
+        }
+      },
+      "tables": [
+        {
+          "block_order": 7,
+          "confidence": 0.931,
+          "rows": 6,
+          "columns": 16,
+          "fields": {
+            "cultivable_area": {
+              "value": "क्षेत्र",
+              "normalized": "क्षेत्र",
+              "header_score": 0.93,
+              "header_row": 2,
+              "header_col": 12,
+              "value_row": 3,
+              "value_col": 12
+            }
+          }
+        }
+      ],
+      "table_count": 1
+    }
+  ],
+  "interpretation": "This is the final extraction/scoring pass for Phase 4. Accuracy is reported only for ground-truth fields marked evaluable and for unique raw IndicOCR documents available locally. No accuracy is claimed for fields/pages without raw OCR evidence."
+}

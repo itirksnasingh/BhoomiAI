@@ -1,0 +1,191 @@
+{
+  "image": "sampleimage11_page_01.png",
+  "width": 1685,
+  "height": 2429,
+  "blocks": [
+    {
+      "order": 0,
+      "label": "Header",
+      "type": "PageHeader",
+      "bbox_xyxy": [
+        146.9,
+        102.5,
+        1652.5,
+        413.4
+      ],
+      "conf": 0.712,
+      "text": ""
+    },
+    {
+      "order": 1,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        149.3,
+        107.4,
+        562.5,
+        168.3
+      ],
+      "conf": 0.668,
+      "text": "GPN-E-1469-CJPN-2-83-5,50,000\nG.R., R.D., No. 10022/24 of 18-10-40.]"
+    },
+    {
+      "order": 2,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        1383.7,
+        140.4,
+        1522.4,
+        170.0
+      ],
+      "conf": 0.663,
+      "text": "R. V. 24 m"
+    },
+    {
+      "order": 3,
+      "label": "Title",
+      "type": "Title",
+      "bbox_xyxy": [
+        745.1,
+        185.3,
+        933.5,
+        219.1
+      ],
+      "conf": 0.662,
+      "text": "गाव नमुना सात"
+    },
+    {
+      "order": 4,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        1268.6,
+        195.3,
+        1579.5,
+        267.7
+      ],
+      "conf": 0.716,
+      "text": "$$= \\frac{980}{90225}$$"
+    },
+    {
+      "order": 5,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        714.6,
+        247.0,
+        977.8,
+        281.8
+      ],
+      "conf": 0.694,
+      "text": "(अधिकार अभिलेख पत्रक)"
+    },
+    {
+      "order": 6,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        149.6,
+        304.4,
+        1549.5,
+        343.5
+      ],
+      "conf": 0.807,
+      "text": "[मह राष्ट्र जमी। महसूल अधिक र अभिलेख आणि नोंदवहम (तय.र करणे व सुस्थितीत ठेवणे) ।.यम, १९०१ व तील नियम ३, ५, ९ अ.णि ७]"
+    },
+    {
+      "order": 7,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        347.8,
+        358.8,
+        547.6,
+        412.2
+      ],
+      "conf": 0.665,
+      "text": "गान...कवळी"
+    },
+    {
+      "order": 8,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        992.3,
+        359.7,
+        1216.2,
+        408.1
+      ],
+      "conf": 0.657,
+      "text": "त लुका... 3.4.2"
+    },
+    {
+      "order": 9,
+      "label": "Table",
+      "type": "Table",
+      "bbox_xyxy": [
+        151.5,
+        434.1,
+        1660.6,
+        1495.8
+      ],
+      "conf": 0.937,
+      "text": "<table>\n<thead>\n<tr>\n<th>भूपा क्रमांक</th>\n<th>भूभाष क्रमांक चा उपविभाग</th>\n<th>भू-धारण पद्धती</th>\n<th rowspan=\"3\">भोगवटादाराचे नाव</th>\n<th rowspan=\"3\">खाते क्रमांक<br/>कुळाचे नाव<br/>रु. पैसे</th>\n</tr>\n<tr>\n<th>९२</th>\n<th>१</th>\n<th>क्रोधവില<br/>वर्ग</th>\n</tr>\n<tr>\n<th>शेताचे स्थानिक नाव</th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<th>ल.गबडीयोग्य क्षेत्र</th>\n<th>हेक्टर</th>\n<th>अ र</th>\n<th></th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td rowspan=\"3\">ONLY</td>\n<td rowspan=\"3\">इतर अधिकार<br/>मुख्यानवरील<br/>खर्च वळाई योग्य ३००/- १५/६/९३<br/>वळेरीच्या ३००-२३१३/७१<br/>यांच्यातील योग्य २१६८-०५ (१२६)<br/>१६/५/९५</td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>एकूण ..</td>\n<td>३३२</td>\n<td></td>\n</tr>\n<tr>\n<td>पोटखराब (ल.गबडीयो व<br/>नसलेले)--</td>\n<td>०</td>\n<td>८१</td>\n<td rowspan=\"5\">VIEN<br/>ONLY Purpose</td>\n<td rowspan=\"5\">सोम. अ.णि भूम.पा चिन्ह</td>\n</tr>\n<tr>\n<td>वर्ग (अ) ..</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>वर्ग (ब) ..</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>एकूण ..</td>\n<td>३३२</td>\n<td></td>\n</tr>\n<tr>\n<td>आकारणी ..</td>\n<td>रुपये पैसे<br/>३४०२<br/>३६०<br/>३६०</td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "order": 10,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        743.6,
+        1533.4,
+        936.7,
+        1621.6
+      ],
+      "conf": 0.596,
+      "text": "गाव नमुना बारा\nपिकांची नोंदवही"
+    },
+    {
+      "order": 11,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        196.3,
+        1639.3,
+        1497.5,
+        1676.0
+      ],
+      "conf": 0.81,
+      "text": "[महाराष्ट्र जमीन महबुल अधिकार अभिलेख अणि नोंदवल्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम २९]"
+    },
+    {
+      "order": 12,
+      "label": "Table",
+      "type": "Table",
+      "bbox_xyxy": [
+        135.8,
+        1695.0,
+        1537.1,
+        2243.9
+      ],
+      "conf": 0.938,
+      "text": "<table>\n<thead>\n<tr>\n<th rowspan=\"4\">वर्ष<br/>१</th>\n<th rowspan=\"4\">हंग म<br/>२</th>\n<th colspan=\"8\">पिकाखालील क्षेत्राचा तपशील</th>\n<th colspan=\"2\">ल.गवडीसाठी<br/>उपलब्ध नसलेली<br/>जमीन</th>\n<th rowspan=\"4\">जल सिंचवाचे साधन<br/>१४</th>\n<th rowspan=\"4\">जमी : करण.राचे नाव<br/>१५</th>\n<th rowspan=\"4\">शेरा<br/>१६</th>\n</tr>\n<tr>\n<th colspan=\"4\">मिश्र पिक खालील क्षेत्र</th>\n<th colspan=\"3\">निभेळ पिक खालील क्षेत्र</th>\n<th rowspan=\"3\">स्वरूप<br/>१२</th>\n<th rowspan=\"3\">क्षेत्र<br/>१३</th>\n</tr>\n<tr>\n<th rowspan=\"2\">मिश्रणाचा संकेत<br/>क्रमांक</th>\n<th rowspan=\"2\">जल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th colspan=\"2\">घटक पिके व प्रत्येक-<br/>खालील क्षेत्र</th>\n<th rowspan=\"2\">पिकाचे नाव</th>\n<th rowspan=\"2\">जल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n</tr>\n<tr>\n<th>पिकाचे<br/>नाव</th>\n<th>जल<br/>सिंचित</th>\n<th>अजल<br/>सिंचित</th>\n</tr>\n<tr>\n<th>१</th>\n<th>२</th>\n<th>३</th>\n<th>४</th>\n<th>५</th>\n<th>६</th>\n<th>७</th>\n<th>८</th>\n<th>९</th>\n<th>१०</th>\n<th>११</th>\n<th>१२</th>\n<th>१३</th>\n<th>१४</th>\n<th>१५</th>\n<th>१६</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td>२१</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "order": 13,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        64.4,
+        2018.3,
+        161.4,
+        2164.0
+      ],
+      "conf": 0.725,
+      "text": "$$\\begin{array}{r}\n\\text{୪ ୧}\\\\\n\\text{୨ ୨}\\\\\n\\hline\n\\text{୨}\n\\end{array}$$"
+    }
+  ],
+  "markdown": "GPN-E-1469-CJPN-2-83-5,50,000\nG.R., R.D., No. 10022/24 of 18-10-40.]\n\nR. V. 24 m\n\nगाव नमुना सात\n\n$$= \\frac{980}{90225}$$\n\n(अधिकार अभिलेख पत्रक)\n\n[मह राष्ट्र जमी। महसूल अधिक र अभिलेख आणि नोंदवहम (तय.र करणे व सुस्थितीत ठेवणे) ।.यम, १९०१ व तील नियम ३, ५, ९ अ.णि ७]\n\nगान...कवळी\n\nत लुका... 3.4.2\n\n<table>\n<thead>\n<tr>\n<th>भूपा क्रमांक</th>\n<th>भूभाष क्रमांक चा उपविभाग</th>\n<th>भू-धारण पद्धती</th>\n<th rowspan=\"3\">भोगवटादाराचे नाव</th>\n<th rowspan=\"3\">खाते क्रमांक<br/>कुळाचे नाव<br/>रु. पैसे</th>\n</tr>\n<tr>\n<th>९२</th>\n<th>१</th>\n<th>क्रोधവില<br/>वर्ग</th>\n</tr>\n<tr>\n<th>शेताचे स्थानिक नाव</th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<th>ल.गबडीयोग्य क्षेत्र</th>\n<th>हेक्टर</th>\n<th>अ र</th>\n<th></th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td rowspan=\"3\">ONLY</td>\n<td rowspan=\"3\">इतर अधिकार<br/>मुख्यानवरील<br/>खर्च वळाई योग्य ३००/- १५/६/९३<br/>वळेरीच्या ३००-२३१३/७१<br/>यांच्यातील योग्य २१६८-०५ (१२६)<br/>१६/५/९५</td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>एकूण ..</td>\n<td>३३२</td>\n<td></td>\n</tr>\n<tr>\n<td>पोटखराब (ल.गबडीयो व<br/>नसलेले)--</td>\n<td>०</td>\n<td>८१</td>\n<td rowspan=\"5\">VIEN<br/>ONLY Purpose</td>\n<td rowspan=\"5\">सोम. अ.णि भूम.पा चिन्ह</td>\n</tr>\n<tr>\n<td>वर्ग (अ) ..</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>वर्ग (ब) ..</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>एकूण ..</td>\n<td>३३२</td>\n<td></td>\n</tr>\n<tr>\n<td>आकारणी ..</td>\n<td>रुपये पैसे<br/>३४०२<br/>३६०<br/>३६०</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n\nगाव नमुना बारा\nपिकांची नोंदवही\n\n[महाराष्ट्र जमीन महबुल अधिकार अभिलेख अणि नोंदवल्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम २९]\n\n<table>\n<thead>\n<tr>\n<th rowspan=\"4\">वर्ष<br/>१</th>\n<th rowspan=\"4\">हंग म<br/>२</th>\n<th colspan=\"8\">पिकाखालील क्षेत्राचा तपशील</th>\n<th colspan=\"2\">ल.गवडीसाठी<br/>उपलब्ध नसलेली<br/>जमीन</th>\n<th rowspan=\"4\">जल सिंचवाचे साधन<br/>१४</th>\n<th rowspan=\"4\">जमी : करण.राचे नाव<br/>१५</th>\n<th rowspan=\"4\">शेरा<br/>१६</th>\n</tr>\n<tr>\n<th colspan=\"4\">मिश्र पिक खालील क्षेत्र</th>\n<th colspan=\"3\">निभेळ पिक खालील क्षेत्र</th>\n<th rowspan=\"3\">स्वरूप<br/>१२</th>\n<th rowspan=\"3\">क्षेत्र<br/>१३</th>\n</tr>\n<tr>\n<th rowspan=\"2\">मिश्रणाचा संकेत<br/>क्रमांक</th>\n<th rowspan=\"2\">जल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th colspan=\"2\">घटक पिके व प्रत्येक-<br/>खालील क्षेत्र</th>\n<th rowspan=\"2\">पिकाचे नाव</th>\n<th rowspan=\"2\">जल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n</tr>\n<tr>\n<th>पिकाचे<br/>नाव</th>\n<th>जल<br/>सिंचित</th>\n<th>अजल<br/>सिंचित</th>\n</tr>\n<tr>\n<th>१</th>\n<th>२</th>\n<th>३</th>\n<th>४</th>\n<th>५</th>\n<th>६</th>\n<th>७</th>\n<th>८</th>\n<th>९</th>\n<th>१०</th>\n<th>११</th>\n<th>१२</th>\n<th>१३</th>\n<th>१४</th>\n<th>१५</th>\n<th>१६</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td>२१</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n\n$$\\begin{array}{r} \\\\ \\text{୪ ୧}\\\\ \\\\ \\text{୨ ୨}\\\\ \\\\ \\hline \\\\ \\text{୨} \\\\ \\end{array}$$",
+  "_phase4_inference_seconds": 52.15
+}

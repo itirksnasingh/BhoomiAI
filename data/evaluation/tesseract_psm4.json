@@ -1,0 +1,94 @@
+{
+  "engine": "tesseract",
+  "language": "mar+eng",
+  "psm": 4,
+  "samples": 12,
+  "mean_cer": 0.9166666666666666,
+  "mean_wer": 0.9166666666666666,
+  "results": [
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage10_page_01.png",
+      "reference": "",
+      "prediction": "",
+      "cer": 0.0,
+      "wer": 0.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage11_page_01.png",
+      "reference": "",
+      "prediction": "पात SEN 2 Socom aie cM é _ GR., R.D., No, 10022/24 of 18-10-40] * गाव TAT सात gg Zo अधिकार अभिलेख पत्रक ( ) (च [Recs जमी । महसूल अधिक र अभिलेख आणि नोंदबह्म (तयर करणे व सुस्थितीत ठेवणे) faa, १९३१ य तील नियम ३, ५, < अ.णि 2] bi ay vari Bide dete Ae 17 By माक | Re न # Te | उपविभाग पडती i a qu\\| 4 Oats शेताचे cafia तःव 5 खाते क्रमांक a ara. TT a कुळाचे नाव _ खंड | — — “SG 277 wy HIYA y IY AIF आक्टसातकूट Sl 22१0 लगवडीयोग्य क्षेत्र । हेक्‍टर इतर अधिक,र- HE aIrak Uc CHL < rock, ae 3०२/- 1% e/eg Berfeond SaL 2919) ewe! SL 2372 jt 4 एकण पोटखराब (ल.गबडीयो य नसलेले) -- बग (अ) ..| \\ at (ब) aN » pee | अ.णि quar Pre ae र 4 \" Oana नमुना बारा a. «\\ & ; 1 0). विकावी नोंदवही [Fetes wit बहुयूल अंधकार sin अ.णि नोंदबह्य/ (तयार करणे व सुस्थितीत Ste) नियम, १९५१ यःतील नियम २९] र बन चि तस क्षेत्राचे, तपशील लःगवडींसाठी र त उपलब्ध नसलेली नै मिश्र थिंक खालील क्षेत्र पिन्चळ पिक.खालील | जमीत प प्र 4 ae jatar WE je [ser पिके व प्रत्येक.- ae | जमी 4 Te ie 3 खालील क्षेत्र = E AF te ट्रा",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage12_page_01.png",
+      "reference": "",
+      "prediction": "j 7 000120 गाव तसुना बारा--चालू्‌. लाळ oe TERE रार",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage1_page_01.png",
+      "reference": "",
+      "prediction": "शा, मु. औ.- (सीए) A G. R., R. Ds, No, 10022/24 of 18-10-40.) गाय SAT सात 20 5 (अधिकार अभिलेख पत्रक) ee ee se eT ४ क्रमांकाची भ-घारणा भूमापन क्रमांक | s el eee SHAM पद्धती भोगवटादाराचे चाव खाते क्रमांक ce 33 कुळाचे तनाव खंड + Alay PA a 8. ee See = f iL Glyn लागवडीयोग्य aa हेक्टर ad श्रे nog इतर अविकार सीमा आणि भूमापन चिन्हे गाद AAT बारा [महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवह्या (तयार करणे च सुस्थितीत ठेवणे) नियम, १९७१ यातील' नियम २९] . पिकाखालील क्षेत्राचा arte । लागवडीसाठी! — —- उपलब्ध मिश्र पिकाखालील ata निर्भेळ पिकाखालील क्षेत्र] नसलेली afta | घटक पिके व प्रत्येका. खालील क्षेत्र",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage2_page_01.png",
+      "reference": "",
+      "prediction": "3 J ra (1 ) गाव TAT wee gal",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage3_page_01.png",
+      "reference": "",
+      "prediction": "ये.का. मु. ७०.००/३००--२-९९ -एपडए४* iz] 202 + 7 A Range, G.R., R.D., No, 10@22/ 24 of 18-10-40] RV. 24m. Do, No. Desk VI/1582 dt. 47-86 From १, ७, 1 & 5. Bombay.) TTA नमुना Ale (अधिकार अभिलेख पत्रक) [महाराष्ट्र जमीन महसूल अधिंद x अभिलेख आणि नोंदवह्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम-३, ५, ६' आणि ७] bare ans तालुका चा = 4 oa eee ie प ee १. 4 = भूमापन क्रमांक अ भूधारणा भोगवटादाराचे नाव खाते क्रमांक iS Y i उपविभाग ' iF 1 4 Cm शे | शेताचे स्थानिक नाव लागवडीयोग्य क्षेत्र हे हर भु ee a \"4 >, 1 हिरक एकूण .. ve ‘ .पोटखरांब (लागवडीयोग्य नसलेले)- नि at (अ) वर्ग (ब) ver .. |” = न Yt | टर आकारणी सीमा आणि भूमापन चिन्हे जुडी किवा oe. आकारणी... |_ ठू े F ) Va गाव THAT ATRT (पिकांची नोंदवही) ii 3 _/महाराष्ट्र irae Nitra af sani णो दवहच (तयार करणे ब सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम २९] - १ a re ५९] प ण ०) Rit Vy 99] | or SNC, pe. a x, fi ITER GoW र न Cine 7 पारी Owe] Suere9 Pe; आ",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage4_page_01.png",
+      "reference": "",
+      "prediction": "गाव नमुना बारा -चालू",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage5_page_01.png",
+      "reference": "",
+      "prediction": "BRD. a.m st [महाराष्ट्र जमीन auger अंधिकर अभिलेख आणि नोंदवहया (sare करणे द सुस्थितीत ठेवणे) नियम, १९७१ दातील नियय.:8/'$ भूमापन क्रमांकाचा | उपविभाग पद्धती | 3 Pe. 1 << aM शेताचे स्थानिक नाद woreda क्षेत्र हेक्‍टर | आर ao BR ore 5 | : ६ > IPS MF aya qr न्न च 1 : GEE. i LHe Al mye (0१1८4 च्य & | ve .. | inl MALT १ - ear. र\" पोटखराब (लाबचझीैयोग्य नसलेले)- । an\\ ल din a x » IGLQ\\ — a | ! wa (अ) | aie ww sere १ 2 $$ 1 सीमा आणि भूमापन चिन्हे | le B ; (पिकांची नोंदवही) $ था (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील raw २९] ]",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage6_page_01.png",
+      "reference": "",
+      "prediction": "SS नि अ ———— नड िंळड्तरन न —— — गाव THAT बारा -चालू SS आ a J हे. आ. ह a ८.५” | 9 j ae ; is 7 H ong PE ore} | — P22 G7] — कशाव",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage7_page_01.png",
+      "reference": "",
+      "prediction": "| hate am ee | | 0 0 9 0 2 न 1 सीमा आणि भूमापन चिन्हे 4 | <“ काल नमुका बारा (पिकांची नोंदवही) उ Sener arate आणि नोंदबह्या (तयार करणे a स्‌स्थितीत ठेवणे) नियम,१९७१ यातील नियत २९] < भकालालील क्षेत्रांचा तपशील लागवडीसाठी",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage8_page_01.png",
+      "reference": "",
+      "prediction": "= Tye: AAW Gy cant] र ! cig | ete म अक भावा आ अच [et a eee न. आ Sateen ‘i. epee न नन उ &",
+      "cer": 1.0,
+      "wer": 1.0
+    },
+    {
+      "image": "C:\\study\\websites\\BhoomiAI\\data\\evaluation\\rendered\\sampleimage9_page_01.png",
+      "reference": "",
+      "prediction": "— — - ६ | शामुको.-स्टं. (जे)सीए १-४५,३१,५००-४ 7 (से.३) »t R. V. 24m. G.R., R. D., No. 10022/24 of 18-10-40. ] गाव नमना सात (अधिकार अभिलेख पत्रक) : [महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवह्या (तयार करणे a सुस्थितीत ठेवणे) नियम, १९३१ arate तियम, @ > ६ ५, © arte i mee ace TS तालूका Sete et! | > [भूमापत FATHTAT ; Pru = Ht ie भूमापन क्रमांक | a ee | भू-घारणा पद्धती भोः यि नाव खाते erie क. , 2 | - ANSE SEL २ ; eee i. ats ENR SEES SIE | कुळाचे नाव खंड भाकप eee os L. शेताचे स्थानिक | A. ee = नाव 3), 5 x. लागवडीयोग्य wie हेक्टर ane yar Soe Sy Sea 5 dasa es Yep — एकूण .. PS _———— a ATTE <. + Po ल Wis Ie-E-ED See ons Lago | पोटखराब ( लागवडीयोग्य नसलेले) -- | at ass र क a Ts at (ब) a i Te = Oso: Ge a सीमा ऑणि श्रूमापत चिन्हे - 2०४९ | म-ौ/ईच्याच्य aie) Srey) यी; Pose Bo) / कटकट 1 TOM BHe, --> i Hoa महाराष्ट्र जमीन Gia tre अभिजेज आणि नोंदवह्ैर (तयार करणे व सुस्थितीत ठेव्गे) नित्रम, १९७१ यातोळ Frat २९ | ae न... उप- if “| ead ~~ aa ' निर्भेळ पिकाखालील क्षेत्र i ; घटक पिके व र हणा क्षेत्राचा तपशील",
+      "cer": 1.0,
+      "wer": 1.0
+    }
+  ]
+}

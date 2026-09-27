@@ -1,0 +1,91 @@
+{
+  "phase": "Phase 4 — OCR, table detection, extraction accuracy and failure analysis",
+  "status": "CACHE-FIRST COMPLETE",
+  "samples": 12,
+  "ground_truth": "data\\evaluation\\field_ground_truth_phase4.csv",
+  "tesseract": {
+    "4": {
+      "evaluable_fields": 26,
+      "exact_field_recall": 0.0385,
+      "fuzzy_field_recall": 0.0385,
+      "mean_field_similarity": 0.0879
+    },
+    "6": {
+      "evaluable_fields": 26,
+      "exact_field_recall": 0.1538,
+      "fuzzy_field_recall": 0.0,
+      "mean_field_similarity": 0.0204
+    },
+    "11": {
+      "evaluable_fields": 26,
+      "exact_field_recall": 0.1538,
+      "fuzzy_field_recall": 0.0,
+      "mean_field_similarity": 0.0126
+    }
+  },
+  "indicocr": {
+    "cached_legacy_benchmark": {
+      "evaluable_fields": 25,
+      "retrieved_fields": 5,
+      "field_retrieval_recall": 0.2,
+      "total_inference_seconds": 2349.27,
+      "average_inference_seconds": 195.77
+    },
+    "coverage_pages": 12,
+    "missing_pages_from_cached_benchmark": [],
+    "fresh_indicocr_pages_required": [],
+    "important_note": "No new IndicOCR inference is performed by default. Cached benchmark values are retained as historical evidence; corrected ground truth changes are only re-evaluated where an existing raw OCR artifact is available.",
+    "sample1_table_proof": {
+      "image": "data/evaluation/rendered/sampleimage1_page_01.png",
+      "inference_seconds": 549.23,
+      "fields": {
+        "document_type": {
+          "reference": "गाव नमुना सात / गाव नमुना बारा",
+          "cached_found_in_ocr": false,
+          "source": "legacy_indicocr_benchmark"
+        },
+        "survey_gat_number": {
+          "reference": "48",
+          "cached_found_in_ocr": true,
+          "source": "legacy_indicocr_benchmark",
+          "evidence": "Existing raw IndicOCR JSON contains table value ४८"
+        }
+      },
+      "source": "cached",
+      "table_count": 1,
+      "table_blocks": [
+        {
+          "block_order": 7,
+          "confidence": 0.931,
+          "bbox": [
+            118.9,
+            3616.8,
+            3253.0,
+            4791.0
+          ],
+          "rows": 6
+        }
+      ],
+      "structure_aware_fields": {
+        "document_type": {
+          "reference": "गाव नमुना सात / गाव नमुना बारा",
+          "match": true,
+          "candidate": "गाय नमुना सात",
+          "score": 0.95
+        },
+        "survey_gat_number": {
+          "reference": "48",
+          "match": false,
+          "candidate": null,
+          "score": 0.0
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "tesseract": "data/evaluation/phase4/",
+    "indicocr_cached": "data/evaluation/phase4/indicocr_cached_analysis.json",
+    "legacy_indicocr": "data/evaluation/indicocr_field_benchmark.json",
+    "sample1_raw": "data/evaluation/indicocr_test_sample1.json"
+  }
+}

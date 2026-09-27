@@ -1,0 +1,58 @@
+{
+  "phase": "Accuracy Improvement — Table-Aware Extraction v2",
+  "status": "COMPLETE",
+  "ground_truth_used": "data/evaluation/field_ground_truth_phase4.csv",
+  "ground_truth_rows": 12,
+  "raw_artifacts_processed": 5,
+  "overall": {
+    "evaluable_fields": 7,
+    "exact_matches": 3,
+    "exact_recall": 0.42857142857142855,
+    "field_summary": {
+      "survey_gat_number": {
+        "evaluable": 5,
+        "exact": 3,
+        "exact_recall": 0.6,
+        "mean_similarity": 0.6
+      },
+      "sub_division": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "account_number": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "holder_name": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "cultivable_area": {
+        "evaluable": 0,
+        "exact": 0,
+        "exact_recall": null,
+        "mean_similarity": null
+      },
+      "land_tenure": {
+        "evaluable": 1,
+        "exact": 0,
+        "exact_recall": 0.0,
+        "mean_similarity": 0.0
+      },
+      "local_field_name": {
+        "evaluable": 1,
+        "exact": 0,
+        "exact_recall": 0.0,
+        "mean_similarity": 0.0
+      }
+    },
+    "unmatched_documents": []
+  },
+  "note": "Scoring-only correction. Existing OCR/table predictions are reused; no OCR inference is launched and no extraction is rerun."
+}

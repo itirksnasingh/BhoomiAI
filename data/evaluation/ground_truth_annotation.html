@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BhoomiAI — Ground Truth Annotation</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f3f4f6;
+    color: #111827;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 20px;
+
+    background: white;
+    border-bottom: 1px solid #d1d5db;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+button {
+    border: 0;
+    border-radius: 7px;
+
+    padding: 10px 15px;
+
+    background: #166534;
+    color: white;
+
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.instructions {
+    margin-bottom: 20px;
+    padding: 16px;
+
+    background: white;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    line-height: 1.5;
+}
+
+.sample {
+    margin-bottom: 30px;
+    padding: 16px;
+
+    background: white;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+
+.sample h2 {
+    margin: 0 0 14px 0;
+    font-size: 17px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 16px;
+}
+
+.panel {
+    overflow: hidden;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: #fafafa;
+}
+
+.panel-title {
+    padding: 10px 12px;
+
+    background: #eef2f7;
+    border-bottom: 1px solid #d1d5db;
+
+    font-weight: bold;
+}
+
+.image-box {
+    max-height: 850px;
+    overflow: auto;
+    padding: 10px;
+    background: #e5e7eb;
+}
+
+.image-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: white;
+}
+
+textarea {
+    display: block;
+
+    width: 100%;
+    min-height: 700px;
+
+    padding: 14px;
+
+    border: 0;
+    outline: none;
+    resize: vertical;
+
+    background: white;
+
+    font-family: Arial, "Noto Sans Devanagari", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.draft-note {
+    padding: 10px 12px;
+
+    border-top: 1px solid #d1d5db;
+    background: #f9fafb;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    textarea {
+        min-height: 450px;
+    }
+
+    header {
+        position: static;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>
+BhoomiAI — Ground Truth Annotation
+</h1>
+
+<button onclick="downloadCSV()">
+Download ground_truth.csv
+</button>
+
+</header>
+
+<div class="container">
+
+<div class="instructions">
+
+<strong>Ground Truth Annotation</strong>
+
+<p>
+Review each scanned document on the left.
+The text box on the right contains the Tesseract OCR draft.
+Correct it against the scanned document.
+</p>
+
+<p>
+The corrected text will be used as the independent reference
+for CER and WER evaluation.
+</p>
+
+<p>
+Total pages: <strong>12</strong>
+</p>
+
+</div>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 1 / 12
+        — sampleimage10_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage10_page_01.png"
+                    alt="sampleimage10_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-0"
+                data-image="data/evaluation/rendered/sampleimage10_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >erin ० ११
+ह | आ.
+
+a czy Isa,
+
+= - uy १४११) र अल्का?
+
+अ LBRNTAC
+Qe TIDY cermin
+
+AY जा</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 2 / 12
+        — sampleimage11_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage11_page_01.png"
+                    alt="sampleimage11_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-1"
+                data-image="data/evaluation/rendered/sampleimage11_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >पात SEN 2 Socom aie cM é
+_ GR., R.D., No, 10022/24 of 18-10-40] *
+
+गाव THAT सात मि —
+(अधिकार aise पत्रक) fy
+[मह र.ध्टर जमी । बहसूल अधिक र अजविलिख आणि नोॉंदबह्म (ax करणें व सुस्थितीत ठेवणे) fas, १९३१ य तील नियम ३, ५, &lt; अ.णि 2]
+
+वि vari Bide dete Ae
+|
+
+i j By Tat क्रमांक भूमाप ATH aT 4 धारण
+
+खाते क्रमांक a
+id उपविभाग पद्धती a
+
+ara. TT
+
+Dit a: १९.-| क ही 1 (2 कुळांचे नाव _ खंड
+ob 1 | ह स j 0 जी अन il a) GAMUT Hgrty —- र र
+Fi शेताचे enfin तःव&#x27; IATA 21 भावी LF oe
+
+अर
+
+लगवडीयोग्य क्षेत्र । हेक्‍टर
+
+इतर अधिक,र-
+ट eure
+ees rie, ey 300/- १ &amp;/ ele
+
+वेव 945717
+क्ल efly 24 “TK pets
+
+१६७९१
+
+एकण
+
+नसलेले) --
+
+बग (अ) . LS \
+71 Gt). 4 »
+pee |
+
+सोम! अ.णि qt Pre
+
+व (“शल नमुता बारा
+$ 1 NY ov पिकीवी नोंबंब्हो
+
+[Fetes wit बहुयूल अंधकार sin अ.णि नोंदबह्य/ (तयार करणे व सुस्थितीत Ste) नियम, १९५१ यःतील नियम २९]
+
+र बन चि तस क्षेत्राचे, तपशील लःगवडींसाठी
+क उपलब्ध नसलेली
+fag थिंक खालील क्षेत्र fia fi जमीत is
+बर्ष gra WE pe [कटक पिके व xa] © | wir 4 लाब
+E ् 2 “| ¢ खालील क्षेत्र is 2
+E) a ae रः
+BFE EETRERZ E|E|EIE| &amp; |¢ E
+EI ~ fo] é)¢] 4 |प१ 1३३ | १३. [१४ Q</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 3 / 12
+        — sampleimage12_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage12_page_01.png"
+                    alt="sampleimage12_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-2"
+                data-image="data/evaluation/rendered/sampleimage12_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >गाव तसुना बारा--चालू्‌.
+
+साह oe</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 4 / 12
+        — sampleimage1_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage1_page_01.png"
+                    alt="sampleimage1_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-3"
+                data-image="data/evaluation/rendered/sampleimage1_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >शा, मु. औ.- (सीए) A
+
+G. R., R. Ds, No, 10022/24 of 18-10-40.) = ki (oO \
+गाय नसला सात rH
+205 (अधिकार अभिलेख पत्रक) नश आ
+[मिहाराष्ट्र जमीन महसूल अधियगर अभिलेख आणि नोंदवह्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७५ यातील aT
+FoR
+शाव क क आ. कक ee 377707 Lata ह तालुका कक कक क “उ्क्ोपाा sere a8
+es 2 ee ee hee = = ee Sena netn आमका =e
+र ye क्रमांकाचा | भ-धारणा 1
+Sh कमक | SHAT पद्धती भोगवटादाराचे साव खाते क्रंमाक
+J fc $5 कुळाचे नाव खंड
++ Adlay a
+a 8.
+——— &lt;&lt;... | Wy ye ua ANP
+Bae e sre
+wae evr bee | इतर अविकार
+CRY
+पोटखराब (लागवडीयोग्य
+डि
+सीमा आणि भूमापन चिन्हे
+
+गाद AAT बारा
+[महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवह्या (तयार करणे च सुस्थितीत ठेवणे) नियम, १९७१ यातील&#x27; नियम २९] . रु
+पिकाखालील क्षेत्राचा तपक्लील q लागवडीसाठी
+
+उपलंडधे
+
+मिश्र पिकाखालील ata Prac पिकाखालील &#x27; क्षेत्र नसलेली जमीन |
+
+cea पिके ब प्रत्येका:
+खालील क्षेत्र</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 5 / 12
+        — sampleimage2_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage2_page_01.png"
+                    alt="sampleimage2_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-4"
+                data-image="data/evaluation/rendered/sampleimage2_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >रै क
+_ - &gt; क ont
+
+ra (1 ) गाव TAT wee gal
+
+Cayce
+
+Oe (Or exis
+
+_ र “स्पर
+
+९८2८९२ उ ot आ oe
+
+. = SRO |
+Lid 1 । १“ |</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 6 / 12
+        — sampleimage3_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage3_page_01.png"
+                    alt="sampleimage3_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-5"
+                data-image="data/evaluation/rendered/sampleimage3_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >रः
+
+५: = feat विशेष आकारणी...
+
+। च arg
+&amp; Aq
+
+BT. मु. ७०,००,टै००-२-९९ ative सी २1२०३ 4 a
+
+G.R., R.D., No, 10@22/ 24 of 18-10-40]
+Do, No. Desk VI/1582 dt. 47-86 From १, ७, 1 &amp; 5. Bombay.) TTA नमुना Ale (अधिकार अभिलेख पत्रक)
+
+[महाराष्ट्र जमीन महसूल अधिंद x अभिलेख आणि नोंदवह्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम-३, ५, ६&#x27; आणि ७]
+
+4
+
+mea ans तालुका चा कट .
+: न भूमापन क्रमांकाचा | भूधारणा भोगवटादाराचे नाव खाते क्रमांक
+eae उपविभाग &#x27; | पद्धती a
+शै Ce HT * कुळाचे नाव
+a =
+
+FT. २४ स.
+
+२.४. 24 m.
+
+खंड
+
+शेताचे स्थानिक नाव
+लागवडीयोग्य क्षेत्र
+कि» क आईच. enh Wn whee 2 SHY Bh 2४% ॥
+एकण .. BA zopovel THe
+3 Hoe MIT SS
+.पोटखरांब (लागवडीयोग्य नसलेले)- Beyer 2८१८.
+at (अ) a adie 4
+वर्ग (ब)
+—
+एकूण .. &quot;00002९
+a ri 25
+आकारणी सीमा आणि भूमापन चिन्हे
+
+१ ve र (पिकांची नोंदवही)
+_/महाराष्ट्र ज मीन सूट म sai eager (तारे &#x27;क्रेरणे व सुस्थिबीत ठेवणे) नियम, 9909 बातील नियम २९] -
+
+हे. आ. | हे. आ. हे. आ.
+
+ore] SU jee)
+
+—
+oy for)
+
+;
+
+os
+
+2THAM QI
+के</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 7 / 12
+        — sampleimage4_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage4_page_01.png"
+                    alt="sampleimage4_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-6"
+                data-image="data/evaluation/rendered/sampleimage4_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >गाव नमुना बारा -चालू
+
+ह उता कपा हता तवे
+२१00028
+
+ao” LI7 pee
+
+Nv</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 8 / 12
+        — sampleimage5_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage5_page_01.png"
+                    alt="sampleimage5_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-7"
+                data-image="data/evaluation/rendered/sampleimage5_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >भूमापन क्रमांकाचा
+उपविभाग
+
+(१) aT 9: ar an
+
+। D HPS ल्‌ aya a “4 T a |
+1 sf Me Nee sg is
+
+van ial - MALAI EO iz 5
+
+1 deans (लाबचझीयोग्य नसलेले)- था an\ @ 4 a \ » IGRQ2\ — a
+f wa (अ)
+
+wi (ब) न चार
+4 &gt; | oa O a2 i] 1 सीमा आणि भूमापन चिन्हे 1
+“ie &amp; उ
+
+(पिकांची नोंदवही) 8
+था (तयार करणे व सुस्थितीत ठेवणे) नियम,१९७१ यातील नियम २९] ]</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 9 / 12
+        — sampleimage6_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage6_page_01.png"
+                    alt="sampleimage6_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-8"
+                data-image="data/evaluation/rendered/sampleimage6_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >Y
+
+eye] ay |
+
+EAU] 2G
+
+Quer z : शप
+
+शाय नमुना बारा -चालू
+
+000086.
+
+9
+ATE Ay. AN
+
+qo ean
+
+SYA २1५५
+
+1
+कता ¢
+
+BRYA PNW
+839
+
+ल
+_— | वाळवत —
+apne .</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 10 / 12
+        — sampleimage7_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage7_page_01.png"
+                    alt="sampleimage7_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-9"
+                data-image="data/evaluation/rendered/sampleimage7_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >iil bh ह सि
+
+ie ees
+शेताचे स्थनिक ताद क्ल जा
+
+लागबशीयोग्य क्षेत्र हेक्‍टर | आर cacy es ts
+» aTgo) “9. Al 2254 Qi
+
+ह न्न Orel ६ नप च wre
+
+: i } Ite PSIG ल22दम a&quot; \ ne
+
+ie SAS ~ व शी
+——- —- | i) eye A\zte gor a = .
+Sey ee र ) 7 4
+Gar 0१८ टे. gata ही 3 प. Qt!
+bat | क 2 hs
+पोटलराच (लाबचकीैयोग्य नसलेले )- उ | VY ni aan n- 26% ०२१
+nh -| ०14
+wa (ब) आ fe
+एकण .. ee 071049
+आक्रणी : | il eee ee 9 | 0 0 0 0 2 1] । सीमा आणि area चिन्हे त
+जुडी feat विशेष आकारणी
+
+LAT नमला बारा (पिकांची नोंदवही)
+paar airs Hee अधिकार arate आणि नोंदबहद्या (तयार करणे व afearitar ठेवणे) नियम, १९७१ ardre Fram २९६]
+&lt;&gt; पिकालालील क्षेत्रांचा तपशील लागवडीसाठी
+: निर्भेळ पिकाखालील क्षेत्र wine ree E
+
+ळे आ.)!हे.आ</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 11 / 12
+        — sampleimage8_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage8_page_01.png"
+                    alt="sampleimage8_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-10"
+                data-image="data/evaluation/rendered/sampleimage8_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >गाव नमुना बारा -चालू-
+
+क आ Ts. [%. Pay | १२ | १३ |
+
+र ‘ :</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="sample">
+
+    <h2>
+        Sample 12 / 12
+        — sampleimage9_page_01.png
+    </h2>
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Scanned Document
+            </div>
+
+            <div class="image-box">
+                <img
+                    src="rendered/sampleimage9_page_01.png"
+                    alt="sampleimage9_page_01.png"
+                >
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Verified Ground Truth
+            </div>
+
+            <textarea
+                id="gt-11"
+                data-image="data/evaluation/rendered/sampleimage9_page_01.png"
+                placeholder="Enter the verified text from the scanned document..."
+            >— —
+
+= ६
+
+| शामुको.-स्टॅ. (जे)सीए १-४५,३१,५००-४ i (#2) च R. ४. 24m.
+G.R., R. D., No. 10022/24 of 18-10-40. ] गाव नमना सात
+
+(अधिकार अभिलेख पत्रक)
+
+1 [महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवह्या (तयार करणे व॑ सुस्थितीत ठेवणे) नियम, १९३१ यातोळ a 4, © arf
+i गाव “ळू तालूका So
+He
+भूमापन क्रमांक | yd Sagi | भू-धारणा पडती भोगवटादाराचे नाव खते ete? क. : a sh
+= | ९
+
+| - ANS FES 2:
+
+7 ee | 8 ate खंड
+ग शेताचे स्थानिक ह होत स
+नावं
+लागवडीयोग्य क्षेत्र हेक्टर शकती ees —
+———— =
+
+45 ee Or ठेले १५ धे क्र (£
+7 ह. { - see @rxy Zé €
+Soe &gt; a
+
+RA AST &gt;. ODay Wie १७८६८६३)
+पोटखराब ( लागवडीयोग्य egies ie }
+नसलेले )-- । soi ae Aas
+
+at (a aS
+at (ब)
+
+*
+
+सीमा ऑणि श्रूमापत चिन्हे -
+27०६९) | न -पौ/ईच्वाच्चा Tie] बवे) eye
+rats. jt! 4
+Pose Dh) 34) 464८२ ।
+क —&gt; i
+
+Hoa महाराष्ट्र जमीन Gia tre अभिजेज आणि नोंदवह्ैर (तयार करणे व सुस्थितीत ठेव्गे) नित्रम, १९७१ यातोळ Frat २९ |
+
+ae न... aI if
+
+“| ead | &#x27; fia पिकाखालील क्षेत्र क$ ; म
+घटक पिके व र हा
+
+खालील क्षेत्र |
+| :
+
+E ElF glee E |:
+
+¥ छाट १० ११ oe ES i १४ 19%
+ह | 2. ३ हे. | आः
+
+=
+
+क्षेत्राचा तपशील
+
+4
+
+er
+
+7 4]
+on 22. | हित a}
+
+७2०२ a %,
+
+gy</textarea>
+
+            <div class="draft-note">
+                The box starts with the Tesseract draft.
+                Correct it carefully against the scanned image.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
+
+<script>
+
+function csvEscape(value) {
+
+    return '"' +
+        value
+            .replace(/"/g, '""')
+            .replace(/\r\n/g, '\n')
+            .replace(/\r/g, '\n') +
+        '"';
+
+}
+
+
+function downloadCSV() {
+
+    const boxes =
+        document.querySelectorAll("textarea");
+
+    let csv =
+        "image,ground_truth\r\n";
+
+    boxes.forEach(function(box) {
+
+        const image =
+            box.getAttribute("data-image");
+
+        const text =
+            box.value.trim();
+
+        csv +=
+            csvEscape(image) +
+            "," +
+            csvEscape(text) +
+            "\r\n";
+
+    });
+
+    const blob =
+        new Blob(
+            ["\uFEFF" + csv],
+            {
+                type:
+                    "text/csv;charset=utf-8"
+            }
+        );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const link =
+        document.createElement("a");
+
+    link.href = url;
+    link.download =
+        "ground_truth.csv";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+
+}
+
+</script>
+
+</body>
+
+</html>

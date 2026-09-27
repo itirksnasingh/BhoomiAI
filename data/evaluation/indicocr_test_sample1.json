@@ -1,0 +1,112 @@
+{
+  "image": "sampleimage1_page_01.png",
+  "width": 3396,
+  "height": 4836,
+  "blocks": [
+    {
+      "order": 0,
+      "label": "Header",
+      "type": "PageHeader",
+      "bbox_xyxy": [
+        201.4,
+        193.4,
+        3367.1,
+        1005.4
+      ],
+      "conf": 0.707,
+      "text": ""
+    },
+    {
+      "order": 1,
+      "label": "Folio",
+      "type": "PageNumber",
+      "bbox_xyxy": [
+        236.4,
+        304.2,
+        1118.0,
+        467.2
+      ],
+      "conf": 0.577,
+      "text": "शा. मु. औ.-(सीए) ३९\nG. R., R. D., No. 10022/24 of 18-10-40.]"
+    },
+    {
+      "order": 2,
+      "label": "Section-title",
+      "type": "SectionHeader",
+      "bbox_xyxy": [
+        1495.9,
+        458.5,
+        2048.1,
+        683.3
+      ],
+      "conf": 0.6,
+      "text": "गाय नमुना सात\n\n(अधिकार अभिलेख पत्रक)"
+    },
+    {
+      "order": 3,
+      "label": "Diagram",
+      "type": "Figure",
+      "bbox_xyxy": [
+        2619.3,
+        181.8,
+        3352.2,
+        782.0
+      ],
+      "conf": 0.814,
+      "text": ""
+    },
+    {
+      "order": 4,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        239.4,
+        732.2,
+        3267.0,
+        984.6
+      ],
+      "conf": 0.619,
+      "text": "[महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवह्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम इ.प. ६ आणि ७]\nगाँव .........आळोर ......... तालुका .........आळोर......... 903"
+    },
+    {
+      "order": 5,
+      "label": "Table",
+      "type": "Table",
+      "bbox_xyxy": [
+        237.7,
+        1019.9,
+        3259.5,
+        3315.1
+      ],
+      "conf": 0.962,
+      "text": "<table>\n<thead>\n<tr>\n<th>भूमापन क्रमांक</th>\n<th>भूमापन क्रमांकाचा<br/>उपविभाग</th>\n<th>भू-धारणा<br/>पद्धती</th>\n<th rowspan=\"2\">भोगवटादाराचे नाव</th>\n<th rowspan=\"2\">खाते क्रमांक</th>\n</tr>\n<tr>\n<th>४८</th>\n<th>-</th>\n<th>मोगवटादार<br/>वर्ग १</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>शेताचे स्थानिक नाव</td>\n<td></td>\n<td></td>\n<td rowspan=\"2\">“ ई क्लास ”<br/>मोफत गुरे चारण्या वरीनां</td>\n<td rowspan=\"2\">कुळाचे नाव खंड<br/>रु. पैसे</td>\n</tr>\n<tr>\n<td>लागवडीयोग्य क्षेत्र</td>\n<td>हेक्टर</td>\n<td>आर</td>\n</tr>\n<tr>\n<td>जिराईत</td>\n<td></td>\n<td></td>\n<td rowspan=\"5\"></td>\n<td rowspan=\"5\">इतर अविकार</td>\n</tr>\n<tr>\n<td>एकूण</td>\n<td>-</td>\n<td>.</td>\n</tr>\n<tr>\n<td>पोटखराब (लागवडीयोग्य<br/>नसलेले )--<br/>वर्ग (अ)<br/>वर्ग (ब)<br/>FCR</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>आकारणी</td>\n<td>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for"
+    },
+    {
+      "order": 6,
+      "label": "Table-caption",
+      "type": "Caption",
+      "bbox_xyxy": [
+        366.8,
+        3341.7,
+        3114.1,
+        3620.7
+      ],
+      "conf": 0.614,
+      "text": "गाज नमुन्या बारा\nपिकांची नोंदवही\n[महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवहथा (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम २९]"
+    },
+    {
+      "order": 7,
+      "label": "Table",
+      "type": "Table",
+      "bbox_xyxy": [
+        118.9,
+        3616.8,
+        3253.0,
+        4791.0
+      ],
+      "conf": 0.931,
+      "text": "<table>\n<thead>\n<tr>\n<th rowspan=\"4\">वर्ष<br/>1</th>\n<th rowspan=\"4\">हंगाम<br/>2</th>\n<th colspan=\"9\">पिकाखालील क्षेत्राचा तपशील</th>\n<th colspan=\"2\" rowspan=\"2\">लागवडीसाठी<br/>उपलब्ध<br/>नसलेली जमीन</th>\n<th rowspan=\"4\">जाल सिंचनाचे साधन<br/>१४</th>\n<th rowspan=\"4\">जमीन करणाराचे नाव<br/>१५</th>\n<th rowspan=\"4\">शेरा<br/>१६</th>\n</tr>\n<tr>\n<th colspan=\"6\">मिश्र पिकाखालील क्षेत्र</th>\n<th colspan=\"3\">निर्भेळ पिकाखालील क्षेत्र</th>\n</tr>\n<tr>\n<th rowspan=\"2\">मिश्रणाचा संकेत<br/>क्रमांक</th>\n<th rowspan=\"2\">जालसिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th colspan=\"3\">घटक पिके व प्रत्येका-<br/>खालील क्षेत्र</th>\n<th rowspan=\"2\">पिकाचे नाव</th>\n<th rowspan=\"2\">जाल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th rowspan=\"2\">स्वरूप</th>\n<th rowspan=\"2\">क्षेत्र</th>\n</tr>\n<tr>\n<th>पिकाचे<br/>नाव</th>\n<th>जाल<br/>सिंचित</th>\n<th>अजल<br/>सिंचित</th>\n</tr>\n<tr>\n<th>1</th>\n<th>2</th>\n<th>3</th>\n<th>4</th>\n<th>5</th>\n<th>6</th>\n<th>7</th>\n<th>8</th>\n<th>9</th>\n<th>10</th>\n<th>11</th>\n<th>12</th>\n<th>13</th>\n<th>14</th>\n<th>15</th>\n<th>16</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td></td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td></td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td></td>\n<td>हे. आ.<br/>कोनी<br/>9-107</td>\n<td></td>\n<td>सरकार</td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+    }
+  ],
+  "markdown": "शा. मु. औ.-(सीए) ३९\nG. R., R. D., No. 10022/24 of 18-10-40.]\n\nगाय नमुना सात\n\n(अधिकार अभिलेख पत्रक)\n\n[महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवह्या (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम इ.प. ६ आणि ७]\nगाँव .........आळोर ......... तालुका .........आळोर......... 903\n\n<table>\n<thead>\n<tr>\n<th>भूमापन क्रमांक</th>\n<th>भूमापन क्रमांकाचा<br/>उपविभाग</th>\n<th>भू-धारणा<br/>पद्धती</th>\n<th rowspan=\"2\">भोगवटादाराचे नाव</th>\n<th rowspan=\"2\">खाते क्रमांक</th>\n</tr>\n<tr>\n<th>४८</th>\n<th>-</th>\n<th>मोगवटादार<br/>वर्ग १</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>शेताचे स्थानिक नाव</td>\n<td></td>\n<td></td>\n<td rowspan=\"2\">“ ई क्लास ”<br/>मोफत गुरे चारण्या वरीनां</td>\n<td rowspan=\"2\">कुळाचे नाव खंड<br/>रु. पैसे</td>\n</tr>\n<tr>\n<td>लागवडीयोग्य क्षेत्र</td>\n<td>हेक्टर</td>\n<td>आर</td>\n</tr>\n<tr>\n<td>जिराईत</td>\n<td></td>\n<td></td>\n<td rowspan=\"5\"></td>\n<td rowspan=\"5\">इतर अविकार</td>\n</tr>\n<tr>\n<td>एकूण</td>\n<td>-</td>\n<td>.</td>\n</tr>\n<tr>\n<td>पोटखराब (लागवडीयोग्य<br/>नसलेले )--<br/>वर्ग (अ)<br/>वर्ग (ब)<br/>FCR</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>आकारणी</td>\n<td>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for legal purpose<br/>Not for\n\nगाज नमुन्या बारा\nपिकांची नोंदवही\n[महाराष्ट्र जमीन महसूल अधिकार अभिलेख आणि नोंदवहथा (तयार करणे व सुस्थितीत ठेवणे) नियम, १९७१ यातील नियम २९]\n\n<table>\n<thead>\n<tr>\n<th rowspan=\"4\">वर्ष<br/>1</th>\n<th rowspan=\"4\">हंगाम<br/>2</th>\n<th colspan=\"9\">पिकाखालील क्षेत्राचा तपशील</th>\n<th colspan=\"2\" rowspan=\"2\">लागवडीसाठी<br/>उपलब्ध<br/>नसलेली जमीन</th>\n<th rowspan=\"4\">जाल सिंचनाचे साधन<br/>१४</th>\n<th rowspan=\"4\">जमीन करणाराचे नाव<br/>१५</th>\n<th rowspan=\"4\">शेरा<br/>१६</th>\n</tr>\n<tr>\n<th colspan=\"6\">मिश्र पिकाखालील क्षेत्र</th>\n<th colspan=\"3\">निर्भेळ पिकाखालील क्षेत्र</th>\n</tr>\n<tr>\n<th rowspan=\"2\">मिश्रणाचा संकेत<br/>क्रमांक</th>\n<th rowspan=\"2\">जालसिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th colspan=\"3\">घटक पिके व प्रत्येका-<br/>खालील क्षेत्र</th>\n<th rowspan=\"2\">पिकाचे नाव</th>\n<th rowspan=\"2\">जाल सिंचित</th>\n<th rowspan=\"2\">अजल सिंचित</th>\n<th rowspan=\"2\">स्वरूप</th>\n<th rowspan=\"2\">क्षेत्र</th>\n</tr>\n<tr>\n<th>पिकाचे<br/>नाव</th>\n<th>जाल<br/>सिंचित</th>\n<th>अजल<br/>सिंचित</th>\n</tr>\n<tr>\n<th>1</th>\n<th>2</th>\n<th>3</th>\n<th>4</th>\n<th>5</th>\n<th>6</th>\n<th>7</th>\n<th>8</th>\n<th>9</th>\n<th>10</th>\n<th>11</th>\n<th>12</th>\n<th>13</th>\n<th>14</th>\n<th>15</th>\n<th>16</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td></td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td></td>\n<td>हे. आ.</td>\n<td>हे. आ.</td>\n<td></td>\n<td>हे. आ.<br/>कोनी<br/>9-107</td>\n<td></td>\n<td>सरकार</td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+}
