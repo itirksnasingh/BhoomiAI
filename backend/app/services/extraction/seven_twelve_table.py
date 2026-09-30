@@ -226,26 +226,57 @@ class SevenTwelveTableExtractor:
 
     @staticmethod
     def _cluster_rows(blocks: list[OCRBlock]) -> list[list[OCRBlock]]:
-        ordered = sorted(blocks, key=lambda b: (SevenTwelveTableExtractor._box(b)[1], SevenTwelveTableExtractor._box(b)[0]))
-        rows: list[list[OCRBlock]] = []
-        for block in ordered:
+        """Cluster OCR blocks into rows efficiently using row center positions."""
+        usable = []
+
+        for block in blocks:
             box = SevenTwelveTableExtractor._box(block)
             if box is None:
                 continue
-            _, y, _, h = box
-            cy = y + h / 2
-            placed = False
-            for row in rows:
-                row_boxes = [SevenTwelveTableExtractor._box(item) for item in row]
-                centers = [yy + hh / 2 for _, yy, _, hh in row_boxes if yy is not None]
-                tolerance = max(18.0, h * 0.9)
-                if centers and abs(cy - sum(centers) / len(centers)) <= tolerance:
-                    row.append(block)
-                    row.sort(key=lambda item: SevenTwelveTableExtractor._box(item)[0])
-                    placed = True
-                    break
-            if not placed:
+
+            x, y, w, h = box
+            usable.append((y + h / 2, x, block, h))
+
+        usable.sort(key=lambda item: (item[0], item[1]))
+
+        rows: list[list[OCRBlock]] = []
+        row_centers: list[float] = []
+        row_heights: list[float] = []
+
+        for cy, x, block, h in usable:
+            best_index = None
+            best_distance = None
+
+            for i, center in enumerate(row_centers):
+                tolerance = max(18.0, min(h, row_heights[i]) * 0.9)
+                distance = abs(cy - center)
+
+                if distance <= tolerance:
+                    if best_distance is None or distance < best_distance:
+                        best_index = i
+                        best_distance = distance
+
+            if best_index is None:
                 rows.append([block])
+                row_centers.append(cy)
+                row_heights.append(h)
+            else:
+                rows[best_index].append(block)
+
+                count = len(rows[best_index])
+                row_centers[best_index] = (
+                    (row_centers[best_index] * (count - 1)) + cy
+                ) / count
+                row_heights[best_index] = max(
+                    row_heights[best_index],
+                    h,
+                )
+
+        for row in rows:
+            row.sort(
+                key=lambda item: SevenTwelveTableExtractor._box(item)[0]
+            )
+
         return rows
 
     @classmethod
