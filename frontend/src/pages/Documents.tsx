@@ -166,7 +166,7 @@ export default function Documents() {
         </div>
 
         <h2 className="mt-4 text-sm font-semibold text-[#33483F]">
-          {uploading ? "Uploading documentÃƒÂ¯Ã‚Â¿Ã‚Â½" : "Upload a land document"}
+          {uploading ? "Uploading document..." : "Upload a land document"}
         </h2>
 
         <p className="mx-auto mt-1 max-w-md text-xs leading-5 text-[#82908A]">
@@ -174,7 +174,7 @@ export default function Documents() {
         </p>
 
         <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#9AA7A1]">
-          PDF ÃƒÂ¯Ã‚Â¿Ã‚Â½ PNG ÃƒÂ¯Ã‚Â¿Ã‚Â½ JPG ÃƒÂ¯Ã‚Â¿Ã‚Â½ JPEG ÃƒÂ¯Ã‚Â¿Ã‚Â½ TIFF
+          PDF ... PNG ... JPG ... JPEG ... TIFF
         </p>
       </div>
 
@@ -210,7 +210,7 @@ export default function Documents() {
 
         {loading ? (
           <div className="p-10 text-center text-sm text-[#84928C]">
-            Loading documentsÃƒÂ¯Ã‚Â¿Ã‚Â½
+            Loading documents...
           </div>
         ) : !documents.length ? (
           <div className="p-12 text-center">
@@ -301,3 +301,4 @@ export default function Documents() {
     </div>
   );
 }
+

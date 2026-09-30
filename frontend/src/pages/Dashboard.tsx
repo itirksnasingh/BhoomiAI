@@ -1,4 +1,4 @@
-import {
+﻿import {
   AlertTriangle,
   ArrowRight,
   CheckCircle2,
@@ -103,7 +103,7 @@ export default function Dashboard() {
   const averageConfidence =
     summary?.average_confidence === null ||
     summary?.average_confidence === undefined
-      ? "Ã¯Â¿Â½"
+      ? "..."
       : `${Math.round((summary.average_confidence > 1 ? summary.average_confidence / 100 : summary.average_confidence) * 100)}%`;
 
   return (
@@ -111,7 +111,7 @@ export default function Dashboard() {
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#648072]">
-            READ Ã¯Â¿Â½ VERIFY Ã¯Â¿Â½ TRUST
+            READ ... VERIFY ... TRUST
           </p>
 
           <h1 className="mt-1 text-[30px] font-semibold tracking-[-0.04em] text-[#21362D]">
@@ -146,14 +146,14 @@ export default function Dashboard() {
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <MetricCard
           label="Total documents"
-          value={loading ? "Ã¯Â¿Â½" : summary?.total_documents ?? "Ã¯Â¿Â½"}
+          value={loading ? "..." : summary?.total_documents ?? "..."}
           detail="Documents registered in workspace"
           icon={<FileText className="h-4 w-4" />}
         />
 
         <MetricCard
           label="Processed"
-          value={loading ? "Ã¯Â¿Â½" : summary?.processed_documents ?? "Ã¯Â¿Â½"}
+          value={loading ? "..." : summary?.processed_documents ?? "..."}
           detail="Completed document processing"
           icon={<CheckCircle2 className="h-4 w-4" />}
           tone="green"
@@ -161,7 +161,7 @@ export default function Dashboard() {
 
         <MetricCard
           label="Needs review"
-          value={loading ? "Ã¯Â¿Â½" : summary?.fields_needing_review ?? "Ã¯Â¿Â½"}
+          value={loading ? "..." : summary?.fields_needing_review ?? "..."}
           detail="Fields requiring attention"
           icon={<ShieldAlert className="h-4 w-4" />}
           tone="amber"
@@ -169,7 +169,7 @@ export default function Dashboard() {
 
         <MetricCard
           label="Average confidence"
-          value={loading ? "Ã¯Â¿Â½" : averageConfidence}
+          value={loading ? "..." : averageConfidence}
           detail="Available extraction confidence"
           icon={<Clock3 className="h-4 w-4" />}
         />
@@ -197,7 +197,7 @@ export default function Dashboard() {
           <div className="border-t border-[#E8EFEC]">
             {loading ? (
               <div className="p-8 text-center text-sm text-[#84928C]">
-                Loading workspaceÃ¯Â¿Â½
+                Loading workspace...
               </div>
             ) : !summary?.recent_documents?.length ? (
               <div className="p-8 text-center">
@@ -288,7 +288,7 @@ export default function Dashboard() {
                         <p className="mt-1 text-[10px] text-[#9AA59F]">
                           {item.validation_status}
                           {item.page_number
-                            ? ` Ã¯Â¿Â½ Page ${item.page_number}`
+                            ? ` ... Page ${item.page_number}`
                             : ""}
                         </p>
                       </div>
@@ -357,9 +357,10 @@ function StateRow({
         </p>
 
         <p className="mt-0.5 text-lg font-semibold text-[#33483F]">
-          {value === undefined ? "Ã¯Â¿Â½" : value}
+          {value === undefined ? "..." : value}
         </p>
       </div>
     </div>
   );
 }
+
